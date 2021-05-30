@@ -30,6 +30,12 @@
 		BF40490F265A417000CA02B5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40490E265A417000CA02B5 /* NetworkError.swift */; };
 		BF404913265A7B6C00CA02B5 /* SearchLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF404912265A7B6C00CA02B5 /* SearchLocation.swift */; };
 		BF404919265A815400CA02B5 /* SearchLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF404918265A815400CA02B5 /* SearchLocationUseCase.swift */; };
+		BF4773C3266370A8000E2492 /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4773C2266370A8000E2492 /* SearchResult.storyboard */; };
+		BF4773C626637D2D000E2492 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4773C526637D2D000E2492 /* SearchResultCell.xib */; };
+		BF4773C9266387C9000E2492 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773C8266387C9000E2492 /* SearchResultViewController.swift */; };
+		BF4773CC266387E5000E2492 /* SearchResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4773CB266387E5000E2492 /* SearchResultHeaderView.xib */; };
+		BF4773CF26638D2A000E2492 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773CE26638D2A000E2492 /* SearchResultCell.swift */; };
+		BF4773D326639442000E2492 /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773D226639442000E2492 /* SearchResultHeaderView.swift */; };
 		BF7E2E3B265FA2DF00A810BE /* PriceSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */; };
 		BF7E2E3E265FA36F00A810BE /* PriceSliderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */; };
 		BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E41265FBC5300A810BE /* SequenceDates.swift */; };
@@ -86,6 +92,12 @@
 		BF40490E265A417000CA02B5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		BF404912265A7B6C00CA02B5 /* SearchLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocation.swift; sourceTree = "<group>"; };
 		BF404918265A815400CA02B5 /* SearchLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationUseCase.swift; sourceTree = "<group>"; };
+		BF4773C2266370A8000E2492 /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
+		BF4773C526637D2D000E2492 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		BF4773C8266387C9000E2492 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		BF4773CB266387E5000E2492 /* SearchResultHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultHeaderView.xib; sourceTree = "<group>"; };
+		BF4773CE26638D2A000E2492 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		BF4773D226639442000E2492 /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
 		BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSlider.swift; sourceTree = "<group>"; };
 		BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSliderLayer.swift; sourceTree = "<group>"; };
 		BF7E2E41265FBC5300A810BE /* SequenceDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDates.swift; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 		BF4048D72658F48D00CA02B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF4773C126637090000E2492 /* SearchResult */,
 				BF7E2E4D2660276900A810BE /* People */,
 				BF2FEAEB265BEFAE0022CB93 /* Price */,
 				BF2FEADF265BB8EE0022CB93 /* SearchCondition */,
@@ -263,6 +276,19 @@
 				BF404918265A815400CA02B5 /* SearchLocationUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		BF4773C126637090000E2492 /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				BF4773C2266370A8000E2492 /* SearchResult.storyboard */,
+				BF4773C8266387C9000E2492 /* SearchResultViewController.swift */,
+				BF4773C526637D2D000E2492 /* SearchResultCell.xib */,
+				BF4773CE26638D2A000E2492 /* SearchResultCell.swift */,
+				BF4773CB266387E5000E2492 /* SearchResultHeaderView.xib */,
+				BF4773D226639442000E2492 /* SearchResultHeaderView.swift */,
+			);
+			path = SearchResult;
 			sourceTree = "<group>";
 		};
 		BF7E2E40265FBC2A00A810BE /* Entity */ = {
@@ -396,8 +422,11 @@
 				BF4048D52658D8C500CA02B5 /* Calendar.storyboard in Resources */,
 				BF2FEAE6265BBB960022CB93 /* SearchCondition.storyboard in Resources */,
 				BFE430C02653903000F4DA1C /* LaunchScreen.storyboard in Resources */,
+				BF4773C3266370A8000E2492 /* SearchResult.storyboard in Resources */,
+				BF4773C626637D2D000E2492 /* SearchResultCell.xib in Resources */,
 				BFE430BD2653903000F4DA1C /* Assets.xcassets in Resources */,
 				BF9F9522265E01F0003CF475 /* Price.storyboard in Resources */,
+				BF4773CC266387E5000E2492 /* SearchResultHeaderView.xib in Resources */,
 				BF7E2E572660280700A810BE /* People.storyboard in Resources */,
 				BFE430BB2653902E00F4DA1C /* Main.storyboard in Resources */,
 			);
@@ -420,6 +449,7 @@
 				BF4048E42658FCAC00CA02B5 /* CalendarHelper.swift in Sources */,
 				BFE430B82653902E00F4DA1C /* MainViewController.swift in Sources */,
 				BF2FEAE9265BE0730022CB93 /* SearchConditionViewModel.swift in Sources */,
+				BF4773D326639442000E2492 /* SearchResultHeaderView.swift in Sources */,
 				BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */,
 				BFE4310626554B3600F4DA1C /* LocationCell.swift in Sources */,
 				BF2FEAF0265C20230022CB93 /* Date+Extension.swift in Sources */,
@@ -432,6 +462,7 @@
 				BF9F950D265DE9DC003CF475 /* UICollectionCell+Extension.swift in Sources */,
 				BF40490F265A417000CA02B5 /* NetworkError.swift in Sources */,
 				BFE431172655948800F4DA1C /* LocationResultCell.swift in Sources */,
+				BF4773CF26638D2A000E2492 /* SearchResultCell.swift in Sources */,
 				BF7E2E4A265FCF6D00A810BE /* CGFloat+Extension.swift in Sources */,
 				BF7E2E612660B25400A810BE /* BabyCountState.swift in Sources */,
 				BF9F951E265DFD69003CF475 /* NotificationName+Extension.swift in Sources */,
@@ -450,6 +481,7 @@
 				BFE4311326557A2900F4DA1C /* LocationHeaderView.swift in Sources */,
 				BF7E2E54266027E400A810BE /* PeopleViewController.swift in Sources */,
 				BF4048F92659ED1400CA02B5 /* DateFormatter+Extension.swift in Sources */,
+				BF4773C9266387C9000E2492 /* SearchResultViewController.swift in Sources */,
 				BF2FEAED265BEFDB0022CB93 /* PriceViewController.swift in Sources */,
 				BFE430D526541D2B00F4DA1C /* LocationSearchViewController.swift in Sources */,
 				BF7E2E702660BC0500A810BE /* ButtonMapper.swift in Sources */,

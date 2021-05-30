@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="ZPc-Ll-B2s" customClass="SearchResultHeaderView" customModule="airBnb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="433" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KPo-dn-Ia3">
+                    <rect key="frame" x="0.0" y="32" width="433" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="양재・5월 25일 - 5월 28일・게스트 3명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkd-94-aJ5">
+                            <rect key="frame" x="0.0" y="0.0" width="433" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300개 이상의 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-23-nNE">
+                            <rect key="frame" x="0.0" y="22.5" width="433" height="21.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="LpB-5k-A2r"/>
+            <constraints>
+                <constraint firstItem="LpB-5k-A2r" firstAttribute="trailing" secondItem="KPo-dn-Ia3" secondAttribute="trailing" id="5kR-WD-x8o"/>
+                <constraint firstItem="KPo-dn-Ia3" firstAttribute="top" secondItem="ZPc-Ll-B2s" secondAttribute="top" constant="32" id="YXh-Wj-b5X"/>
+                <constraint firstItem="KPo-dn-Ia3" firstAttribute="leading" secondItem="LpB-5k-A2r" secondAttribute="leading" id="h3D-Cc-Tl0"/>
+                <constraint firstItem="KPo-dn-Ia3" firstAttribute="centerY" secondItem="ZPc-Ll-B2s" secondAttribute="centerY" id="hF5-LX-sto"/>
+            </constraints>
+            <point key="canvasLocation" x="-83.333333333333343" y="235.04464285714283"/>
+        </collectionReusableView>
+    </objects>
+</document>

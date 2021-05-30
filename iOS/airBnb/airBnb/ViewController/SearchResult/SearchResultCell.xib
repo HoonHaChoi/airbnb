@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eH6-te-4dN" customClass="SearchResultCell" customModule="airBnb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="365"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cob-Sp-I9f">
+                <rect key="frame" x="0.0" y="0.0" width="344" height="365"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainImage" translatesAutoresizingMaskIntoConstraints="NO" id="RU9-4j-shn">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="219"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z1q-dH-VRW">
+                        <rect key="frame" x="0.0" y="227" width="344" height="136"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ucf-5V-ezy">
+                                <rect key="frame" x="0.0" y="0.0" width="344" height="16"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lTT-AU-a7M">
+                                        <rect key="frame" x="0.0" y="0.0" width="132.33333333333334" height="16"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-lY-TFI">
+                                                <rect key="frame" x="0.0" y="-0.33333333333333215" width="22" height="15.666666666666664"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="DEw-NN-AmA"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLD-bt-RCw">
+                                                <rect key="frame" x="32" y="0.0" width="26" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(후기 123개)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiZ-Bl-cru">
+                                                <rect key="frame" x="68" y="0.0" width="64.333333333333314" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="w9t-vD-tJB">
+                                <rect key="frame" x="0.0" y="24" width="344" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="콘도(아파트) 전체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMV-7A-1Tk">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="0F4-EB-3Ge"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacious and Comfortable cozy house #4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJd-Mf-4av">
+                                        <rect key="frame" x="0.0" y="26" width="344" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩82,133 /  박" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEi-IY-GtE">
+                                <rect key="frame" x="0.0" y="83" width="344" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="r63-ZE-Rux"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총액 ₩123,232" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ze-tD-ScG">
+                                <rect key="frame" x="0.0" y="116" width="344" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="09X-Mh-SGw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="DistanceColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RU9-4j-shn" firstAttribute="height" secondItem="cob-Sp-I9f" secondAttribute="height" multiplier="0.6" id="3of-5V-GKS"/>
+                    <constraint firstItem="Z1q-dH-VRW" firstAttribute="leading" secondItem="cob-Sp-I9f" secondAttribute="leading" id="46d-ry-782"/>
+                    <constraint firstItem="RU9-4j-shn" firstAttribute="leading" secondItem="cob-Sp-I9f" secondAttribute="leading" id="DUT-WX-1w0"/>
+                    <constraint firstItem="Z1q-dH-VRW" firstAttribute="top" secondItem="RU9-4j-shn" secondAttribute="bottom" constant="8" id="HiY-be-7a9"/>
+                    <constraint firstAttribute="trailing" secondItem="Z1q-dH-VRW" secondAttribute="trailing" id="NTO-MZ-Nx9"/>
+                    <constraint firstItem="RU9-4j-shn" firstAttribute="top" secondItem="cob-Sp-I9f" secondAttribute="top" id="d8B-j7-gS7"/>
+                    <constraint firstAttribute="trailing" secondItem="RU9-4j-shn" secondAttribute="trailing" id="gat-Dd-iO0"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="344" height="365"/>
+            <point key="canvasLocation" x="156.80000000000001" y="181.4039408866995"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="MainImage" width="250" height="325.33334350585938"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="DistanceColor">
+            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

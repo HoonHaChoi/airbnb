@@ -80,6 +80,11 @@ class PeopleViewController: UIViewController {
         searchManager?.bindPlusButtonisEnanbled().sink { [weak self] in
             self?.buttonsViewModel.canPlusButtonTouched(adult: $0, kid: $1, baby: $2)
         }.store(in: &cancellable)
+        
+        nextViewControllerSubject.sink { (_) in
+            let searchResultController = UIStoryboard.create(identifier: SearchResultViewController.self, name: "SearchResult")
+            self.navigationController?.pushViewController(searchResultController, animated: true)
+        }.store(in: &cancellable)
     }
     
 }
