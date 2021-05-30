@@ -36,6 +36,8 @@
 		BF4773CC266387E5000E2492 /* SearchResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4773CB266387E5000E2492 /* SearchResultHeaderView.xib */; };
 		BF4773CF26638D2A000E2492 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773CE26638D2A000E2492 /* SearchResultCell.swift */; };
 		BF4773D326639442000E2492 /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773D226639442000E2492 /* SearchResultHeaderView.swift */; };
+		BF4773D82663B601000E2492 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4773D72663B601000E2492 /* Map.storyboard */; };
+		BF4773DB2663B619000E2492 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773DA2663B619000E2492 /* MapViewController.swift */; };
 		BF7E2E3B265FA2DF00A810BE /* PriceSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */; };
 		BF7E2E3E265FA36F00A810BE /* PriceSliderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */; };
 		BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E41265FBC5300A810BE /* SequenceDates.swift */; };
@@ -98,6 +100,8 @@
 		BF4773CB266387E5000E2492 /* SearchResultHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultHeaderView.xib; sourceTree = "<group>"; };
 		BF4773CE26638D2A000E2492 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		BF4773D226639442000E2492 /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
+		BF4773D72663B601000E2492 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		BF4773DA2663B619000E2492 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSlider.swift; sourceTree = "<group>"; };
 		BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSliderLayer.swift; sourceTree = "<group>"; };
 		BF7E2E41265FBC5300A810BE /* SequenceDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDates.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		BF4048D72658F48D00CA02B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF4773D62663B5ED000E2492 /* Map */,
 				BF4773C126637090000E2492 /* SearchResult */,
 				BF7E2E4D2660276900A810BE /* People */,
 				BF2FEAEB265BEFAE0022CB93 /* Price */,
@@ -289,6 +294,15 @@
 				BF4773D226639442000E2492 /* SearchResultHeaderView.swift */,
 			);
 			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		BF4773D62663B5ED000E2492 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BF4773D72663B601000E2492 /* Map.storyboard */,
+				BF4773DA2663B619000E2492 /* MapViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		BF7E2E40265FBC2A00A810BE /* Entity */ = {
@@ -426,6 +440,7 @@
 				BF4773C626637D2D000E2492 /* SearchResultCell.xib in Resources */,
 				BFE430BD2653903000F4DA1C /* Assets.xcassets in Resources */,
 				BF9F9522265E01F0003CF475 /* Price.storyboard in Resources */,
+				BF4773D82663B601000E2492 /* Map.storyboard in Resources */,
 				BF4773CC266387E5000E2492 /* SearchResultHeaderView.xib in Resources */,
 				BF7E2E572660280700A810BE /* People.storyboard in Resources */,
 				BFE430BB2653902E00F4DA1C /* Main.storyboard in Resources */,
@@ -472,6 +487,7 @@
 				BF7E2E3B265FA2DF00A810BE /* PriceSlider.swift in Sources */,
 				BF9F9509265DE6D4003CF475 /* UIStoryBoard+Extension.swift in Sources */,
 				BF4048F12659335800CA02B5 /* CalendarDayCell.swift in Sources */,
+				BF4773DB2663B619000E2492 /* MapViewController.swift in Sources */,
 				BF4048D22658D8AA00CA02B5 /* CalendarViewController.swift in Sources */,
 				BF4048EB26592AAF00CA02B5 /* CalendarDataSource.swift in Sources */,
 				BF9F9513265DED03003CF475 /* UIColor+Extension.swift in Sources */,

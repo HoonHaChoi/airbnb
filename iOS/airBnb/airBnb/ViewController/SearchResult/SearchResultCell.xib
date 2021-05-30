@@ -31,8 +31,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ucf-5V-ezy">
                                 <rect key="frame" x="0.0" y="0.0" width="344" height="16"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lTT-AU-a7M">
-                                        <rect key="frame" x="0.0" y="0.0" width="132.33333333333334" height="16"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lTT-AU-a7M">
+                                        <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="16"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-lY-TFI">
                                                 <rect key="frame" x="0.0" y="-0.33333333333333215" width="22" height="15.666666666666664"/>
@@ -42,13 +42,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLD-bt-RCw">
-                                                <rect key="frame" x="32" y="0.0" width="26" height="16"/>
+                                                <rect key="frame" x="26" y="0.0" width="26" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(후기 123개)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiZ-Bl-cru">
-                                                <rect key="frame" x="68" y="0.0" width="64.333333333333314" height="16"/>
+                                                <rect key="frame" x="55.999999999999993" y="0.0" width="64.333333333333314" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -97,13 +97,24 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw5-HI-15g">
+                        <rect key="frame" x="305" y="19" width="21" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="21" id="fN2-F1-FWz"/>
+                            <constraint firstAttribute="height" constant="20" id="tsz-6P-b7M"/>
+                        </constraints>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" image="heart" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RU9-4j-shn" firstAttribute="height" secondItem="cob-Sp-I9f" secondAttribute="height" multiplier="0.6" id="3of-5V-GKS"/>
                     <constraint firstItem="Z1q-dH-VRW" firstAttribute="leading" secondItem="cob-Sp-I9f" secondAttribute="leading" id="46d-ry-782"/>
                     <constraint firstItem="RU9-4j-shn" firstAttribute="leading" secondItem="cob-Sp-I9f" secondAttribute="leading" id="DUT-WX-1w0"/>
                     <constraint firstItem="Z1q-dH-VRW" firstAttribute="top" secondItem="RU9-4j-shn" secondAttribute="bottom" constant="8" id="HiY-be-7a9"/>
+                    <constraint firstItem="pw5-HI-15g" firstAttribute="top" secondItem="cob-Sp-I9f" secondAttribute="top" constant="19" id="Hw2-iN-o9n"/>
                     <constraint firstAttribute="trailing" secondItem="Z1q-dH-VRW" secondAttribute="trailing" id="NTO-MZ-Nx9"/>
+                    <constraint firstAttribute="trailing" secondItem="pw5-HI-15g" secondAttribute="trailing" constant="18" id="PcH-nd-zqo"/>
                     <constraint firstItem="RU9-4j-shn" firstAttribute="top" secondItem="cob-Sp-I9f" secondAttribute="top" id="d8B-j7-gS7"/>
                     <constraint firstAttribute="trailing" secondItem="RU9-4j-shn" secondAttribute="trailing" id="gat-Dd-iO0"/>
                 </constraints>
@@ -114,6 +125,7 @@
     </objects>
     <resources>
         <image name="MainImage" width="250" height="325.33334350585938"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="DistanceColor">
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
