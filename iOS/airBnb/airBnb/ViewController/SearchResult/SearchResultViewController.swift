@@ -25,6 +25,11 @@ class SearchResultViewController: UIViewController {
         searchResultCollection.register(SearchResultHeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchResultHeaderView.identifier)
         navigationItem.leftBarButtonItem = backButton
     }
+    @IBAction func MoveMapButtonTouched(_ sender: Any) {
+        let mapViewController = UIStoryboard.create(identifier: MapViewController.self, name: "Map")
+        mapViewController.modalPresentationStyle = .fullScreen
+        self.present(mapViewController, animated: true, completion: nil)
+    }
     
     @objc private func resetSearchResult(_ button: UIBarButtonItem) {
         guard let viewControllerStack = self.navigationController?.viewControllers else {

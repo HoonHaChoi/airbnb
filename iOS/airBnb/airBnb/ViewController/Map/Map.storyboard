@@ -8,23 +8,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="XuY-Yf-RRB">
             <objects>
-                <viewController id="hMM-TH-Vbn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="hMM-TH-Vbn" customClass="MapViewController" customModule="airBnb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hlu-Vf-3ML">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CIF-mb-dWR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4DG-TU-UBr">
+                                <rect key="frame" x="0.0" y="710" width="414" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="rMO-BE-LnK"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="z5d-MH-Yh2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-Lr-ptv">
+                                <rect key="frame" x="16" y="60" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="GGh-t2-lkC"/>
+                                    <constraint firstAttribute="height" constant="44" id="Ztw-0k-NaV"/>
+                                </constraints>
+                                <state key="normal" image="MenuIcon"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeButtonTouched:" destination="hMM-TH-Vbn" eventType="touchUpInside" id="38U-AT-b0d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="efa-Eb-Tf8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CIF-mb-dWR" firstAttribute="leading" secondItem="efa-Eb-Tf8" secondAttribute="leading" id="7cC-18-f3p"/>
+                            <constraint firstItem="efa-Eb-Tf8" firstAttribute="bottom" secondItem="4DG-TU-UBr" secondAttribute="bottom" constant="32" id="KRV-Mz-btZ"/>
+                            <constraint firstItem="0v6-Lr-ptv" firstAttribute="leading" secondItem="Hlu-Vf-3ML" secondAttribute="leading" constant="16" id="NzS-se-IdH"/>
+                            <constraint firstItem="efa-Eb-Tf8" firstAttribute="trailing" secondItem="4DG-TU-UBr" secondAttribute="trailing" id="T5r-dh-EGH"/>
+                            <constraint firstItem="4DG-TU-UBr" firstAttribute="leading" secondItem="efa-Eb-Tf8" secondAttribute="leading" id="WbU-sx-K7V"/>
+                            <constraint firstItem="0v6-Lr-ptv" firstAttribute="top" secondItem="Hlu-Vf-3ML" secondAttribute="top" constant="60" id="Xrj-Oo-jyO"/>
+                            <constraint firstItem="CIF-mb-dWR" firstAttribute="top" secondItem="Hlu-Vf-3ML" secondAttribute="top" id="mxV-qS-gEk"/>
+                            <constraint firstItem="CIF-mb-dWR" firstAttribute="trailing" secondItem="efa-Eb-Tf8" secondAttribute="trailing" id="sJ5-5d-yuB"/>
+                            <constraint firstAttribute="bottom" secondItem="CIF-mb-dWR" secondAttribute="bottom" id="tJV-DE-jDw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="4DG-TU-UBr" id="aAr-pv-ewZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LoP-No-FSg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72" y="135"/>
+            <point key="canvasLocation" x="-72.463768115942031" y="134.59821428571428"/>
         </scene>
     </scenes>
     <resources>
+        <image name="MenuIcon" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

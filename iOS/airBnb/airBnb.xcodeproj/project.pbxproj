@@ -38,6 +38,8 @@
 		BF4773D326639442000E2492 /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773D226639442000E2492 /* SearchResultHeaderView.swift */; };
 		BF4773D82663B601000E2492 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4773D72663B601000E2492 /* Map.storyboard */; };
 		BF4773DB2663B619000E2492 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773DA2663B619000E2492 /* MapViewController.swift */; };
+		BF4773DE2663CF61000E2492 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4773DD2663CF61000E2492 /* CardCell.xib */; };
+		BF4773E12663D376000E2492 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773E02663D376000E2492 /* CardCell.swift */; };
 		BF7E2E3B265FA2DF00A810BE /* PriceSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */; };
 		BF7E2E3E265FA36F00A810BE /* PriceSliderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */; };
 		BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E41265FBC5300A810BE /* SequenceDates.swift */; };
@@ -102,6 +104,8 @@
 		BF4773D226639442000E2492 /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
 		BF4773D72663B601000E2492 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		BF4773DA2663B619000E2492 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BF4773DD2663CF61000E2492 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		BF4773E02663D376000E2492 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSlider.swift; sourceTree = "<group>"; };
 		BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSliderLayer.swift; sourceTree = "<group>"; };
 		BF7E2E41265FBC5300A810BE /* SequenceDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDates.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			children = (
 				BF4773D72663B601000E2492 /* Map.storyboard */,
 				BF4773DA2663B619000E2492 /* MapViewController.swift */,
+				BF4773E02663D376000E2492 /* CardCell.swift */,
+				BF4773DD2663CF61000E2492 /* CardCell.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 				BF4773C626637D2D000E2492 /* SearchResultCell.xib in Resources */,
 				BFE430BD2653903000F4DA1C /* Assets.xcassets in Resources */,
 				BF9F9522265E01F0003CF475 /* Price.storyboard in Resources */,
+				BF4773DE2663CF61000E2492 /* CardCell.xib in Resources */,
 				BF4773D82663B601000E2492 /* Map.storyboard in Resources */,
 				BF4773CC266387E5000E2492 /* SearchResultHeaderView.xib in Resources */,
 				BF7E2E572660280700A810BE /* People.storyboard in Resources */,
@@ -477,6 +484,7 @@
 				BF9F950D265DE9DC003CF475 /* UICollectionCell+Extension.swift in Sources */,
 				BF40490F265A417000CA02B5 /* NetworkError.swift in Sources */,
 				BFE431172655948800F4DA1C /* LocationResultCell.swift in Sources */,
+				BF4773E12663D376000E2492 /* CardCell.swift in Sources */,
 				BF4773CF26638D2A000E2492 /* SearchResultCell.swift in Sources */,
 				BF7E2E4A265FCF6D00A810BE /* CGFloat+Extension.swift in Sources */,
 				BF7E2E612660B25400A810BE /* BabyCountState.swift in Sources */,

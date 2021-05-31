@@ -55,6 +55,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="MoveMapButtonTouched:" destination="gKI-Wp-Lx1" eventType="touchUpInside" id="23J-wj-sat"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Qq-Hc-XU1"/>
