@@ -6,14 +6,30 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
-
+    
     @IBOutlet weak var cardCollectionView: UICollectionView!
-
+    @IBOutlet weak var mapView: MKMapView!
+    
+    // 더미 가격 리스트
+    let prices = ["₩82,953", "₩52,953", "₩32,953", "₩112,953", "₩900,953"]
+    let locations = [
+        CLLocationCoordinate2D(latitude: 37.55769, longitude: 126.92450),
+        CLLocationCoordinate2D(latitude: 37.56769, longitude: 126.92450),
+        CLLocationCoordinate2D(latitude: 37.57769, longitude: 126.92450),
+        CLLocationCoordinate2D(latitude: 37.58769, longitude: 126.92450),
+        CLLocationCoordinate2D(latitude: 37.59769, longitude: 126.92450)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        
+        _ = (0...4).map { index in
+            mapView.addAnnotation(Marker(title: prices[index], coordinate: locations[index]))
+        }
+        mapView.delegate = self
     }
     
     private func configureCollectionView() {
@@ -21,11 +37,9 @@ class MapViewController: UIViewController {
         cardCollectionView.dataSource = self
         cardCollectionView.register(CardCell.nib, forCellWithReuseIdentifier: CardCell.identifier)
         
-        let cellWidth = floor(cardCollectionView.frame.width * 0.8)
+        let cellWidth = floor(cardCollectionView.frame.width * 0.85)
         let insetX = (view.bounds.width - cellWidth) / 2.0
-
-        print(cellWidth)
-        print(insetX)
+        
         cardCollectionView.contentInset = UIEdgeInsets(top: 0, left: insetX, bottom: 0, right: insetX)
         cardCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
     }
@@ -61,5 +75,31 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
         offset = CGPoint(x: roundedIndex * cellWidthSpacing - scrollView.contentInset.left,
                          y: scrollView.contentInset.top)
         targetContentOffset.pointee = offset
+    }
+    
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "")
+        
+        let annotationLabel = BadgeLabel()
+        annotationLabel.configure(text: annotation.title ?? "")
+        annotationLabel.sizeToFit()
+        annotationLabel.updateFrame()
+        annotationView.addSubview(annotationLabel)
+        annotationView.canShowCallout = true
+        return annotationView
+    }
+}
+
+class Marker: NSObject, MKAnnotation {
+    let title: String?
+    let coordinate: CLLocationCoordinate2D
+    
+    init(title: String?, coordinate: CLLocationCoordinate2D) {
+        self.title = title
+        self.coordinate = coordinate
+        super.init()
     }
 }

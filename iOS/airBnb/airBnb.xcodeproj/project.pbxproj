@@ -40,6 +40,7 @@
 		BF4773DB2663B619000E2492 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773DA2663B619000E2492 /* MapViewController.swift */; };
 		BF4773DE2663CF61000E2492 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4773DD2663CF61000E2492 /* CardCell.xib */; };
 		BF4773E12663D376000E2492 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773E02663D376000E2492 /* CardCell.swift */; };
+		BF7DDCAA2665043900DCB6A7 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DDCA92665043900DCB6A7 /* BadgeLabel.swift */; };
 		BF7E2E3B265FA2DF00A810BE /* PriceSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */; };
 		BF7E2E3E265FA36F00A810BE /* PriceSliderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */; };
 		BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E41265FBC5300A810BE /* SequenceDates.swift */; };
@@ -106,6 +107,7 @@
 		BF4773DA2663B619000E2492 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BF4773DD2663CF61000E2492 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		BF4773E02663D376000E2492 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		BF7DDCA92665043900DCB6A7 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSlider.swift; sourceTree = "<group>"; };
 		BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSliderLayer.swift; sourceTree = "<group>"; };
 		BF7E2E41265FBC5300A810BE /* SequenceDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDates.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				BF4773DA2663B619000E2492 /* MapViewController.swift */,
 				BF4773E02663D376000E2492 /* CardCell.swift */,
 				BF4773DD2663CF61000E2492 /* CardCell.xib */,
+				BF7DDCA92665043900DCB6A7 /* BadgeLabel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				BF7E2E702660BC0500A810BE /* ButtonMapper.swift in Sources */,
 				BF4048DB2658F53C00CA02B5 /* CalendarManager.swift in Sources */,
 				BF404906265A3F0000CA02B5 /* Endpoint.swift in Sources */,
+				BF7DDCAA2665043900DCB6A7 /* BadgeLabel.swift in Sources */,
 				BF404901265A17CC00CA02B5 /* SearchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
