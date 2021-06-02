@@ -87,9 +87,9 @@ class PriceViewController: UIViewController {
         searchManager?.changePrice(from: priceSlider)
         
         DispatchQueue.main.async { [weak self] in
-            self?.priceMinLabel.text = priceSlider.lowerValue.converNumberFormatter()
-            self?.priceMaxLabel.text = priceSlider.upperValue.converNumberFormatter()
-            self?.priceAvgLabel.text = priceSlider.calculateAvg().converNumberFormatter()
+            self?.priceMinLabel.text = priceSlider.lowerValue.convertDecimalWon()
+            self?.priceMaxLabel.text = priceSlider.upperValue.convertDecimalWon()
+            self?.priceAvgLabel.text = priceSlider.calculateAvg().convertDecimalWon()
         }
     }
     

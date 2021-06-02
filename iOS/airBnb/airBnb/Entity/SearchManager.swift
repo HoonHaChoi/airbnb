@@ -92,4 +92,15 @@ class SearchManager {
     func bindPeopleNextButtonisEnabled() -> AnyPublisher<Bool, Never> {
         return numberOfPleple.isNotZeroPeople()
     }
+    
+    func fetchQueryString() -> (location: Int, checkIn: String, checkOut: String, priceMin: Int, priceMax: Int, adults: Int, children: Int, infants: Int) {
+        return (location: 20,
+                checkIn: selectDates.showSelectDate().start,
+                checkOut: selectDates.showSelectDate().end,
+                priceMin: priceRange.showRangePrice().min,
+                priceMax: priceRange.showRangePrice().max,
+                adults: numberOfPleple.showHeadCount().adult,
+                children: numberOfPleple.showHeadCount().kid,
+                infants: numberOfPleple.showHeadCount().baby)
+    }
 }

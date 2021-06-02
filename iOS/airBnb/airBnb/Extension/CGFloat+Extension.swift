@@ -8,10 +8,15 @@
 import UIKit
 
 extension CGFloat {
-    func converNumberFormatter() -> String {
+    func convertDecimalWon() -> String {
         let number = Int(self * 1000000)
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         return "₩" + (numberFormatter.string(from: NSNumber(value: number)) ?? "")
+    }
+    
+    func convertDecimal() -> Int {
+        let number = Int(self * 1000000)
+        return number
     }
 }

@@ -59,4 +59,9 @@ struct SequenceDates {
     func emptyStartValued() -> Bool {
        return start == nil
     }
+    
+    func showSelectDate() -> (start: String, end: String) {
+        return (start: start?.convertYearMonthDayString() ?? "",
+                end: end?.convertYearMonthDayString() ?? "")
+    }
 }

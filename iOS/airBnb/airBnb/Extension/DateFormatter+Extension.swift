@@ -26,5 +26,10 @@ extension DateFormatter {
         self.dateFormat = "M월 d일"
         return self.string(from: date)
     }
+    
+    func convertYearMonthDayString(date: Date) -> String {
+        self.dateFormat = "yyyy-MM-dd"
+        return self.string(from: date)
+    }
 }
 

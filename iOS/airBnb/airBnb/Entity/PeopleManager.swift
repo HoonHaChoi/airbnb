@@ -121,4 +121,8 @@ class PeopleManager {
     private func isIncreaseEnabled(for count: Int) -> Bool {
         return count < 8
     }
+    
+    func showHeadCount() -> (adult: Int, kid: Int, baby: Int) {
+        return (adult.count, kid.count, baby.count)
+    }
 }

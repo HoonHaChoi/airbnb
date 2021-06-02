@@ -15,7 +15,7 @@ protocol SearchAPIProtocol {
 final class SearchAPI: SearchAPIProtocol {
     
     func requestResource<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError> {
-        guard let url = Endpoint.searchURL(text: location) else {
+        guard let url = Endpoint.searchLocationURL(text: location) else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
         return request(from: url)

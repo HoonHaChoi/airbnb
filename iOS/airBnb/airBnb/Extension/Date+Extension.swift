@@ -11,4 +11,8 @@ extension Date {
     func convertString() -> String {
         return DateFormatter().convertMonthDayString(date: self)
     }
+    
+    func convertYearMonthDayString() -> String {
+        return DateFormatter().convertYearMonthDayString(date: self)
+    }
 }

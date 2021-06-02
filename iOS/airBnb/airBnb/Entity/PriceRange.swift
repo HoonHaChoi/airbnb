@@ -41,7 +41,14 @@ struct PriceRange {
         guard let min = minimunValue, let max = maximumValue else {
             return ""
         }
-        return min.converNumberFormatter() + " - " +
-            max.converNumberFormatter()
+        return min.convertDecimalWon() + " - " +
+            max.convertDecimalWon()
+    }
+    
+    func showRangePrice() -> (min: Int, max: Int) {
+        guard let min = minimunValue,let max = maximumValue else {
+            return (min: 11000, max: 1000000)
+        }
+        return (min.convertDecimal(), max.convertDecimal())
     }
 }
