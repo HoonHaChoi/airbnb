@@ -13,7 +13,7 @@ final class SearchLocationViewModel {
     private let searchLocationUseCase: SearchLocationConfigurable
     private var cancellable = Set<AnyCancellable>()
     
-    @Published private var searchResult:[LocationList] = []
+    @Published private var searchResult: [LocationList] = []
     @Published private var errorMessage = ""
     
     init(searchLocation: SearchLocationConfigurable) {

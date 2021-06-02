@@ -11,6 +11,9 @@ class SearchResultViewController: UIViewController {
 
     @IBOutlet weak var searchResultCollection: UICollectionView!
     
+    private var searchResultViewModel = SearchResultViewModel()
+    private var searchManager: SearchManager?
+    
     private lazy var backButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "뒤로", style: .done, target: self, action: #selector(resetSearchResult(_:)))
         return button
@@ -18,10 +21,8 @@ class SearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchResultCollection.dataSource = self
-        searchResultCollection.delegate = self
-        searchResultCollection.register(SearchResultCell.nib, forCellWithReuseIdentifier: SearchResultCell.identifier)
-        searchResultCollection.register(SearchResultHeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchResultHeaderView.identifier)
+        configureSearchResultCollection()
+        configureSearchResultViewModel()
         navigationItem.leftBarButtonItem = backButton
     }
     
@@ -29,6 +30,25 @@ class SearchResultViewController: UIViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func configureSearchResultCollection() {
+        searchResultCollection.dataSource = self
+        searchResultCollection.delegate = self
+        searchResultCollection.register(SearchResultCell.nib, forCellWithReuseIdentifier: SearchResultCell.identifier)
+        searchResultCollection.register(SearchResultHeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchResultHeaderView.identifier)
+    }
+    
+    private func configureSearchResultViewModel() {
+        guard let manager = searchManager else {
+            return
+        }
+        let searchResultDTO = SearchResultDTO(data: manager.fetchQueryString())
+        searchResultViewModel.requestSearchResult(from: searchResultDTO)
+    }
+    
+    private func bind() {
+        
     }
     
     @IBAction func MoveMapButtonTouched(_ sender: Any) {
