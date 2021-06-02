@@ -55,6 +55,8 @@
 		BF7E2E692660B6BF00A810BE /* PeopleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E682660B6BF00A810BE /* PeopleManager.swift */; };
 		BF7E2E6D2660B8EB00A810BE /* ButtonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E6C2660B8EB00A810BE /* ButtonsViewModel.swift */; };
 		BF7E2E702660BC0500A810BE /* ButtonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E6F2660BC0500A810BE /* ButtonMapper.swift */; };
+		BF9B8A362665DA7F00E0F35A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9B8A352665DA7F00E0F35A /* Detail.storyboard */; };
+		BF9B8A382666029500E0F35A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B8A372666029500E0F35A /* DetailViewController.swift */; };
 		BF9F9509265DE6D4003CF475 /* UIStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F9508265DE6D4003CF475 /* UIStoryBoard+Extension.swift */; };
 		BF9F950D265DE9DC003CF475 /* UICollectionCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F950C265DE9DC003CF475 /* UICollectionCell+Extension.swift */; };
 		BF9F9510265DEAFE003CF475 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F950F265DEAFE003CF475 /* UITableViewCell+Extension.swift */; };
@@ -122,6 +124,8 @@
 		BF7E2E682660B6BF00A810BE /* PeopleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleManager.swift; sourceTree = "<group>"; };
 		BF7E2E6C2660B8EB00A810BE /* ButtonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewModel.swift; sourceTree = "<group>"; };
 		BF7E2E6F2660BC0500A810BE /* ButtonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMapper.swift; sourceTree = "<group>"; };
+		BF9B8A352665DA7F00E0F35A /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		BF9B8A372666029500E0F35A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF9F9508265DE6D4003CF475 /* UIStoryBoard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Extension.swift"; sourceTree = "<group>"; };
 		BF9F950C265DE9DC003CF475 /* UICollectionCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionCell+Extension.swift"; sourceTree = "<group>"; };
 		BF9F950F265DEAFE003CF475 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		BF4048D72658F48D00CA02B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF9B8A342665DA6400E0F35A /* detail */,
 				BF4773D62663B5ED000E2492 /* Map */,
 				BF4773C126637090000E2492 /* SearchResult */,
 				BF7E2E4D2660276900A810BE /* People */,
@@ -348,6 +353,15 @@
 			path = PeopleCount;
 			sourceTree = "<group>";
 		};
+		BF9B8A342665DA6400E0F35A /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				BF9B8A352665DA7F00E0F35A /* Detail.storyboard */,
+				BF9B8A372666029500E0F35A /* DetailViewController.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 		BFE430A72653902E00F4DA1C = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +459,7 @@
 				BF4048D52658D8C500CA02B5 /* Calendar.storyboard in Resources */,
 				BF2FEAE6265BBB960022CB93 /* SearchCondition.storyboard in Resources */,
 				BFE430C02653903000F4DA1C /* LaunchScreen.storyboard in Resources */,
+				BF9B8A362665DA7F00E0F35A /* Detail.storyboard in Resources */,
 				BF4773C3266370A8000E2492 /* SearchResult.storyboard in Resources */,
 				BF4773C626637D2D000E2492 /* SearchResultCell.xib in Resources */,
 				BFE430BD2653903000F4DA1C /* Assets.xcassets in Resources */,
@@ -484,6 +499,7 @@
 				BFE430B62653902E00F4DA1C /* SceneDelegate.swift in Sources */,
 				BF7E2E652660B2B200A810BE /* CountSatable.swift in Sources */,
 				BF4048CF2658CB4600CA02B5 /* LocationResultViewController.swift in Sources */,
+				BF9B8A382666029500E0F35A /* DetailViewController.swift in Sources */,
 				BF9F950D265DE9DC003CF475 /* UICollectionCell+Extension.swift in Sources */,
 				BF40490F265A417000CA02B5 /* NetworkError.swift in Sources */,
 				BFE431172655948800F4DA1C /* LocationResultCell.swift in Sources */,

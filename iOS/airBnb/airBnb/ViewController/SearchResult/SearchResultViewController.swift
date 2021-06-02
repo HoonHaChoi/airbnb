@@ -18,13 +18,19 @@ class SearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = false
         searchResultCollection.dataSource = self
         searchResultCollection.delegate = self
         searchResultCollection.register(SearchResultCell.nib, forCellWithReuseIdentifier: SearchResultCell.identifier)
         searchResultCollection.register(SearchResultHeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchResultHeaderView.identifier)
         navigationItem.leftBarButtonItem = backButton
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     @IBAction func MoveMapButtonTouched(_ sender: Any) {
         let mapViewController = UIStoryboard.create(identifier: MapViewController.self, name: "Map")
         mapViewController.modalPresentationStyle = .fullScreen
@@ -72,5 +78,10 @@ extension SearchResultViewController: UICollectionViewDataSource,UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 108)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = UIStoryboard.create(identifier: DetailViewController.self, name: "Detail")
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

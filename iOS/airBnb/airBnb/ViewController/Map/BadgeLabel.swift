@@ -17,6 +17,7 @@ class BadgeLabel: UILabel {
     
     private func uiAdjustment() {
         self.layer.cornerRadius = 10
+        self.clipsToBounds = true
         self.backgroundColor = .white
         self.textColor = .black
         self.textAlignment = .center
