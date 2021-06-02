@@ -19,7 +19,7 @@ struct PriceRange {
             maximumValue == fixedMaximumValue
     }
     
-    mutating func change(from slider: priceSlider) {
+    mutating func change(from slider: PriceSlider) {
         self.minimunValue = slider.lowerValue
         self.maximumValue = slider.upperValue
     }

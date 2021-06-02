@@ -8,12 +8,6 @@
 import Foundation
 import UIKit
 
-enum PeopleTypes: CaseIterable {
-    case adult
-    case kid
-    case baby
-}
-
 class ButtonMapper {
 
     private var map: [UIButton: PeopleTypes]

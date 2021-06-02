@@ -7,7 +7,7 @@
 
 import UIKit
 
-class priceSlider: UIControl {
+class PriceSlider: UIControl {
 
     private(set) var minimumValue: CGFloat = 0.011 {
         didSet {
@@ -90,7 +90,7 @@ class priceSlider: UIControl {
 }
 
 
-extension priceSlider {
+extension PriceSlider {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
         previousLocation = touch.location(in: self)

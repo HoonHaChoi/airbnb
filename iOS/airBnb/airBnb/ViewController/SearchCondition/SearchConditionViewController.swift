@@ -34,7 +34,7 @@ class SearchConditionViewController: UIViewController{
     
     func inject(from manager : SearchManager?,
                 subject: PassthroughSubject<Void,Never>,
-                state: State) {
+                state: ScreenState) {
         searchConditionViewModel.update(from: manager, of: state)
         nextViewSubject = subject
         deleteDatesSubject.sink { [weak self] _ in

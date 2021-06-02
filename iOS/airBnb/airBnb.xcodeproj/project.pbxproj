@@ -43,6 +43,7 @@
 		BF4773DE2663CF61000E2492 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4773DD2663CF61000E2492 /* CardCell.xib */; };
 		BF4773E12663D376000E2492 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4773E02663D376000E2492 /* CardCell.swift */; };
 		BF7DDCAA2665043900DCB6A7 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DDCA92665043900DCB6A7 /* BadgeLabel.swift */; };
+		BF7DDCAE266540A000DCB6A7 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DDCAD266540A000DCB6A7 /* UICollectionReusableView+Extension.swift */; };
 		BF7E2E3B265FA2DF00A810BE /* PriceSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */; };
 		BF7E2E3E265FA36F00A810BE /* PriceSliderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */; };
 		BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E41265FBC5300A810BE /* SequenceDates.swift */; };
@@ -114,6 +115,7 @@
 		BF4773DD2663CF61000E2492 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		BF4773E02663D376000E2492 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		BF7DDCA92665043900DCB6A7 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+		BF7DDCAD266540A000DCB6A7 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		BF7E2E3A265FA2DF00A810BE /* PriceSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSlider.swift; sourceTree = "<group>"; };
 		BF7E2E3D265FA36F00A810BE /* PriceSliderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSliderLayer.swift; sourceTree = "<group>"; };
 		BF7E2E41265FBC5300A810BE /* SequenceDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDates.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				BF9F9512265DED03003CF475 /* UIColor+Extension.swift */,
 				BF9F951D265DFD69003CF475 /* NotificationName+Extension.swift */,
 				BF7E2E49265FCF6D00A810BE /* CGFloat+Extension.swift */,
+				BF7DDCAD266540A000DCB6A7 /* UICollectionReusableView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				BFE431172655948800F4DA1C /* LocationResultCell.swift in Sources */,
 				BF4773E12663D376000E2492 /* CardCell.swift in Sources */,
 				BF4773CF26638D2A000E2492 /* SearchResultCell.swift in Sources */,
+				BF7DDCAE266540A000DCB6A7 /* UICollectionReusableView+Extension.swift in Sources */,
 				BF7E2E4A265FCF6D00A810BE /* CGFloat+Extension.swift in Sources */,
 				BF7E2E612660B25400A810BE /* BabyCountState.swift in Sources */,
 				BF9F951E265DFD69003CF475 /* NotificationName+Extension.swift in Sources */,

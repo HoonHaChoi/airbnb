@@ -14,8 +14,8 @@ class PriceViewController: UIViewController {
     @IBOutlet weak var priceMinLabel: UILabel!
     @IBOutlet weak var priceMaxLabel: UILabel!
     @IBOutlet weak var priceAvgLabel: UILabel!
-    private lazy var rangeSlider: priceSlider = {
-        let slider = priceSlider()
+    private lazy var rangeSlider: PriceSlider = {
+        let slider = PriceSlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.addTarget(self,
                          action: #selector(priceSliderValueChanged(_:)),
@@ -83,7 +83,7 @@ class PriceViewController: UIViewController {
         }.store(in: &cancellable)
     }
     
-    @objc private func priceSliderValueChanged(_ priceSlider: priceSlider) {
+    @objc private func priceSliderValueChanged(_ priceSlider: PriceSlider) {
         searchManager?.changePrice(from: priceSlider)
         
         DispatchQueue.main.async { [weak self] in

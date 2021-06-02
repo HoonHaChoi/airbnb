@@ -53,7 +53,7 @@ class CalendarViewController: UIViewController {
     
     private func configureCollectionView() {
         calendarCollection.register(CalendarDayCell.self, forCellWithReuseIdentifier: CalendarDayCell.identifier)
-        calendarCollection.register(CalendarHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CalendarHeaderView.identifier)
+        calendarCollection.register(CalendarHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CalendarHeaderView.reuseidentifier)
         calendarCollection.dataSource = calendarDataSource
         calendarCollection.delegate = self
     }

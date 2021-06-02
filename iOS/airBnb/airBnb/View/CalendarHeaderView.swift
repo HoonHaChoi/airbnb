@@ -9,10 +9,6 @@ import UIKit
 
 class CalendarHeaderView: UICollectionReusableView {
     
-    static var identifier: String {
-        return String(describing: self)
-    }
-    
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)

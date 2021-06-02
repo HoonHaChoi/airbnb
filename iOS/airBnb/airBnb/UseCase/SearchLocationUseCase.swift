@@ -14,9 +14,9 @@ protocol SearchLocationConfigurable {
 
 final class SearchLocationUseCase: SearchLocationConfigurable {
     
-    private let networkManager: SearchAPIable
+    private let networkManager: SearchAPIProtocol
     
-    init(networkManage: SearchAPIable) {
+    init(networkManage: SearchAPIProtocol) {
         self.networkManager = networkManage
     }
     

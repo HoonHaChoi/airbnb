@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol SearchAPIable {
+protocol SearchAPIProtocol {
     func requestResource<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError>
 }
 
-final class SearchAPI: SearchAPIable {
+final class SearchAPI: SearchAPIProtocol {
     
     func requestResource<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError> {
         guard let url = Endpoint.searchURL(text: location) else {

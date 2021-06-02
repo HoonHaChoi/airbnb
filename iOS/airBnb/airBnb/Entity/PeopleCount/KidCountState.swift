@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KidCountState: CountStatable {
+class KidCountState: ChildProtocol {
     
     @Published var count: Int
     
@@ -15,24 +15,16 @@ class KidCountState: CountStatable {
         count = 0
     }
     
-    func increase() {
-        if isIncreaseEnabled() {
+    func increase(from: (Int) -> Bool) {
+        if from(count) {
             count += 1
         }
     }
     
-    func decrease() {
-        if isDecreaseEnabled() {
+    func decrease(from: (Int) -> Bool) {
+        if from(count) {
             count -= 1
         }
-    }
-    
-    private func isDecreaseEnabled() -> Bool {
-        return count > 0
-    }
-    
-    private func isIncreaseEnabled() -> Bool {
-        return count < 8
     }
     
     func isNotZero() -> Bool {

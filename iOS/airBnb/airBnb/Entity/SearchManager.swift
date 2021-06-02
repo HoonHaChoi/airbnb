@@ -32,7 +32,7 @@ class SearchManager {
         selectDates.selectDay(with: day)
     }
     
-    func reset(in state: State) {
+    func reset(in state: ScreenState) {
         switch state {
         case .calerdar:
             selectDates.reset()
@@ -53,15 +53,15 @@ class SearchManager {
         return priceRange.detectChanged()
     }
     
-    func changePrice(from price: priceSlider){
+    func changePrice(from price: PriceSlider) {
         priceRange.change(from: price)
     }
     
-    func increasePeople(from type: PeopleTypes){
+    func increasePeople(from type: PeopleTypes) {
         numberOfPleple.increasePeople(from: type)
     }
 
-    func decreasePeoeple(from type: PeopleTypes){
+    func decreasePeoeple(from type: PeopleTypes) {
         numberOfPleple.decreasePeople(from: type)
     }
     
@@ -81,11 +81,11 @@ class SearchManager {
         return numberOfPleple.relayTotalCount()
     }
     
-    func bindMinusButtonisEnanbled() -> AnyPublisher<(Bool, Bool, Bool), Never> {
+    func bindMinusButtonisEnanbled() -> AnyPublisher<(adult: Bool,kid: Bool,baby: Bool), Never> {
         return numberOfPleple.isDectedZero()
     }
     
-    func bindPlusButtonisEnanbled() -> AnyPublisher<(Bool, Bool, Bool), Never> {
+    func bindPlusButtonisEnanbled() -> AnyPublisher<(adult: Bool,kid: Bool,baby: Bool), Never> {
         return numberOfPleple.isDectedFull()
     }
     

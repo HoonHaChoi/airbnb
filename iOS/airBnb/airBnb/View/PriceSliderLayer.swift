@@ -8,7 +8,7 @@
 import UIKit
 
 class RangeSliderTrackLayer: CALayer {
-    weak var rangeSlider: priceSlider?
+    weak var rangeSlider: PriceSlider?
     
     // 더미 그래프 데이터
     let values: [CGFloat] = [1,1,2,3,4,2,4,5,10,20,53,45,50,90,70,65,60,30,15,32,10,5,20,7,5,2,2,2,2,1,1]

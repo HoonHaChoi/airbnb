@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-enum State {
+enum ScreenState {
     case calerdar
     case price
     case people
@@ -18,7 +18,7 @@ class SearchConditionViewModel {
     
     private var cancellable = Set<AnyCancellable>()
     private var searchManager: SearchManager?
-    private var state: State
+    private var state: ScreenState
     
     private let skip = "건너뛰기"
     private let delete = "지우기"
@@ -28,7 +28,7 @@ class SearchConditionViewModel {
         self.state = .calerdar
     }
     
-    func update(from manager: SearchManager?, of state: State) {
+    func update(from manager: SearchManager?, of state: ScreenState) {
         self.searchManager = manager
         self.state = state
     }

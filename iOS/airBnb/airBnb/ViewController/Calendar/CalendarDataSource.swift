@@ -39,7 +39,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CalendarHeaderView.identifier, for: indexPath) as? CalendarHeaderView else {
+        guard let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CalendarHeaderView.reuseidentifier, for: indexPath) as? CalendarHeaderView else {
             return .init()
         }
         let month = CalendarHelper.month(index: indexPath.section)

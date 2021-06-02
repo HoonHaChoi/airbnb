@@ -8,6 +8,12 @@
 import Foundation
 import Combine
 
+enum PeopleTypes: CaseIterable {
+    case adult
+    case kid
+    case baby
+}
+
 class PeopleManager {
     
     private var adult: AdultCountState
@@ -35,12 +41,12 @@ class PeopleManager {
     }
     
     func increasePeople(from people: PeopleTypes) {
-        peopleMapper[people]?.increase()
+        peopleMapper[people]?.increase(from: isIncreaseEnabled(for:))
         existOnlyChildren()
     }
     
     func decreasePeople(from people: PeopleTypes) {
-        peopleMapper[people]?.decrease()
+        peopleMapper[people]?.decrease(from: isDecreaseEnabled(for:))
         existOnlyChildren()
     }
     
@@ -70,12 +76,12 @@ class PeopleManager {
             }.store(in: &cancellable)
     }
     
-    func isDectedZero() -> AnyPublisher<(Bool, Bool, Bool), Never> {
+    func isDectedZero() -> AnyPublisher<(adult: Bool,kid: Bool,baby: Bool), Never> {
         adult.$count.combineLatest(kid.$count, baby.$count)
             .map {
-                (self.isNotZero(count: $0),
-                 self.isNotZero(count: $1),
-                 self.isNotZero(count: $2))
+                (self.isDecreaseEnabled(for: $0),
+                 self.isDecreaseEnabled(for: $1),
+                 self.isDecreaseEnabled(for: $2))
             }.eraseToAnyPublisher()
     }
     
@@ -83,12 +89,12 @@ class PeopleManager {
         return count != 0
     }
     
-    func isDectedFull() -> AnyPublisher<(Bool, Bool, Bool), Never> {
+    func isDectedFull() -> AnyPublisher<(adult: Bool,kid: Bool,baby: Bool), Never> {
         adult.$count.combineLatest(kid.$count, baby.$count)
             .map {
-                (self.isNotFull(count: $0),
-                 self.isNotFull(count: $1),
-                 self.isNotFull(count: $2))
+                (self.isIncreaseEnabled(for: $0),
+                 self.isIncreaseEnabled(for: $1),
+                 self.isIncreaseEnabled(for: $2))
             }.eraseToAnyPublisher()
     }
     
@@ -106,5 +112,13 @@ class PeopleManager {
         return adult.$count.map {
             self.isNotZero(count: $0)
         }.eraseToAnyPublisher()
+    }
+    
+    private func isDecreaseEnabled(for count: Int) -> Bool {
+        return count > 0
+    }
+    
+    private func isIncreaseEnabled(for count: Int) -> Bool {
+        return count < 8
     }
 }
