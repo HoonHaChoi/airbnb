@@ -41,6 +41,12 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    @IBAction func reservationButtonTouched(_ sender: UIButton) {
+        let reservationViewController = UIStoryboard.create(identifier: ReservationViewController.self, name: "Reservation")
+        reservationViewController.modalPresentationStyle = .overFullScreen
+        self.present(reservationViewController, animated: true, completion: nil)
+    }
+    
     @objc func closeView(_ button: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }

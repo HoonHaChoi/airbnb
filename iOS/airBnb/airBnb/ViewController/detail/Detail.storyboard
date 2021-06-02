@@ -200,6 +200,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="reservationButtonTouched:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2ke-By-UwD"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="41r-13-D9A">
                                         <rect key="frame" x="16" y="16" width="203" height="46.5"/>

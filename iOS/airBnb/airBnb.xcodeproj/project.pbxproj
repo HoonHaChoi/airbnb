@@ -14,6 +14,8 @@
 		BF2FEAE9265BE0730022CB93 /* SearchConditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FEAE8265BE0720022CB93 /* SearchConditionViewModel.swift */; };
 		BF2FEAED265BEFDB0022CB93 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FEAEC265BEFDB0022CB93 /* PriceViewController.swift */; };
 		BF2FEAF0265C20230022CB93 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FEAEF265C20220022CB93 /* Date+Extension.swift */; };
+		BF3FDA73266735F30007D782 /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3FDA72266735F30007D782 /* Reservation.storyboard */; };
+		BF3FDA752667628C0007D782 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA742667628C0007D782 /* ReservationViewController.swift */; };
 		BF4048CF2658CB4600CA02B5 /* LocationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */; };
 		BF4048D22658D8AA00CA02B5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */; };
 		BF4048D52658D8C500CA02B5 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4048D42658D8C500CA02B5 /* Calendar.storyboard */; };
@@ -83,6 +85,8 @@
 		BF2FEAE8265BE0720022CB93 /* SearchConditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditionViewModel.swift; sourceTree = "<group>"; };
 		BF2FEAEC265BEFDB0022CB93 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		BF2FEAEF265C20220022CB93 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		BF3FDA72266735F30007D782 /* Reservation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reservation.storyboard; sourceTree = "<group>"; };
+		BF3FDA742667628C0007D782 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultViewController.swift; sourceTree = "<group>"; };
 		BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BF4048D42658D8C500CA02B5 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -184,9 +188,19 @@
 			path = Price;
 			sourceTree = "<group>";
 		};
+		BF3FDA71266735DC0007D782 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FDA72266735F30007D782 /* Reservation.storyboard */,
+				BF3FDA742667628C0007D782 /* ReservationViewController.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
 		BF4048D72658F48D00CA02B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF3FDA71266735DC0007D782 /* Reservation */,
 				BF9B8A342665DA6400E0F35A /* detail */,
 				BF4773D62663B5ED000E2492 /* Map */,
 				BF4773C126637090000E2492 /* SearchResult */,
@@ -463,6 +477,7 @@
 				BF4773C3266370A8000E2492 /* SearchResult.storyboard in Resources */,
 				BF4773C626637D2D000E2492 /* SearchResultCell.xib in Resources */,
 				BFE430BD2653903000F4DA1C /* Assets.xcassets in Resources */,
+				BF3FDA73266735F30007D782 /* Reservation.storyboard in Resources */,
 				BF9F9522265E01F0003CF475 /* Price.storyboard in Resources */,
 				BF4773DE2663CF61000E2492 /* CardCell.xib in Resources */,
 				BF4773D82663B601000E2492 /* Map.storyboard in Resources */,
@@ -508,6 +523,7 @@
 				BF7E2E4A265FCF6D00A810BE /* CGFloat+Extension.swift in Sources */,
 				BF7E2E612660B25400A810BE /* BabyCountState.swift in Sources */,
 				BF9F951E265DFD69003CF475 /* NotificationName+Extension.swift in Sources */,
+				BF3FDA752667628C0007D782 /* ReservationViewController.swift in Sources */,
 				BF2FEAE2265BBAED0022CB93 /* SearchConditionViewController.swift in Sources */,
 				BF7E2E6D2660B8EB00A810BE /* ButtonsViewModel.swift in Sources */,
 				BF9F9510265DEAFE003CF475 /* UITableViewCell+Extension.swift in Sources */,
