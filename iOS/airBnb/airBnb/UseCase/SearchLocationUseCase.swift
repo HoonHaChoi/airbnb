@@ -25,6 +25,6 @@ final class SearchLocationUseCase: SearchLocationConfigurable {
     }
     
     func requestSearchLocation(from location: String) -> AnyPublisher<SearchLoaction, NetworkError> {
-        return networkManager.requestResource(from: location)
+        return networkManager.requestLocation(from: location)
     }
 }

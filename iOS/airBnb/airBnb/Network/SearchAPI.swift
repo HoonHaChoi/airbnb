@@ -9,13 +9,21 @@ import Foundation
 import Combine
 
 protocol SearchAPIProtocol {
-    func requestResource<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError>
+    func requestLocation<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError>
+    func requestSearchResult<T: Decodable>(from data: SearchResultDTO) -> AnyPublisher<T, NetworkError>
 }
 
 final class SearchAPI: SearchAPIProtocol {
     
-    func requestResource<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError> {
+    func requestLocation<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError> {
         guard let url = Endpoint.searchLocationURL(text: location) else {
+            return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
+        }
+        return request(from: url)
+    }
+    
+    func requestSearchResult<T: Decodable>(from data: SearchResultDTO) -> AnyPublisher<T, NetworkError> {
+        guard let url = Endpoint.searchLoadingURL(query: Endpoint.makeQueryItem(queryData: data)) else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
         return request(from: url)

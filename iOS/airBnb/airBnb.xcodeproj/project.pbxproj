@@ -17,6 +17,8 @@
 		BF3FDA73266735F30007D782 /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3FDA72266735F30007D782 /* Reservation.storyboard */; };
 		BF3FDA752667628C0007D782 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA742667628C0007D782 /* ReservationViewController.swift */; };
 		BF3FDA772667DBB50007D782 /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA762667DBB50007D782 /* SearchResultDTO.swift */; };
+		BF3FDA792667E3410007D782 /* SearchResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA782667E3410007D782 /* SearchResultUseCase.swift */; };
+		BF3FDA7B2667E3A70007D782 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA7A2667E3A70007D782 /* SearchResult.swift */; };
 		BF4048CF2658CB4600CA02B5 /* LocationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */; };
 		BF4048D22658D8AA00CA02B5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */; };
 		BF4048D52658D8C500CA02B5 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4048D42658D8C500CA02B5 /* Calendar.storyboard */; };
@@ -90,6 +92,8 @@
 		BF3FDA72266735F30007D782 /* Reservation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reservation.storyboard; sourceTree = "<group>"; };
 		BF3FDA742667628C0007D782 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		BF3FDA762667DBB50007D782 /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
+		BF3FDA782667E3410007D782 /* SearchResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultUseCase.swift; sourceTree = "<group>"; };
+		BF3FDA7A2667E3A70007D782 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultViewController.swift; sourceTree = "<group>"; };
 		BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BF4048D42658D8C500CA02B5 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				BF404912265A7B6C00CA02B5 /* SearchLocation.swift */,
+				BF3FDA7A2667E3A70007D782 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				BF404918265A815400CA02B5 /* SearchLocationUseCase.swift */,
+				BF3FDA782667E3410007D782 /* SearchResultUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -514,11 +520,13 @@
 				BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */,
 				BFE4310626554B3600F4DA1C /* LocationCell.swift in Sources */,
 				BF2FEAF0265C20230022CB93 /* Date+Extension.swift in Sources */,
+				BF3FDA792667E3410007D782 /* SearchResultUseCase.swift in Sources */,
 				BF7E2E5A2660B22B00A810BE /* AdultCountState.swift in Sources */,
 				BFE430B42653902E00F4DA1C /* AppDelegate.swift in Sources */,
 				BF404919265A815400CA02B5 /* SearchLocationUseCase.swift in Sources */,
 				BFE430B62653902E00F4DA1C /* SceneDelegate.swift in Sources */,
 				BF7E2E652660B2B200A810BE /* CountSatable.swift in Sources */,
+				BF3FDA7B2667E3A70007D782 /* SearchResult.swift in Sources */,
 				BF4048CF2658CB4600CA02B5 /* LocationResultViewController.swift in Sources */,
 				BF3FDA772667DBB50007D782 /* SearchResultDTO.swift in Sources */,
 				BF9B8A382666029500E0F35A /* DetailViewController.swift in Sources */,
