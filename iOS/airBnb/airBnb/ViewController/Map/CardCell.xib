@@ -90,6 +90,13 @@
                 </userDefinedRuntimeAttributes>
             </collectionViewCellContentView>
             <size key="customSize" width="323" height="120"/>
+            <connections>
+                <outlet property="avgRatingLabel" destination="fm7-wO-YFt" id="vuk-9V-trz"/>
+                <outlet property="reviewCountLabel" destination="DI8-fi-OFy" id="ctx-Je-YOp"/>
+                <outlet property="roomPrice" destination="UDP-Nd-wjN" id="wSK-Fz-bBh"/>
+                <outlet property="roomTitle" destination="yuO-rg-Yh6" id="Vq6-h7-p1o"/>
+                <outlet property="thumbNailImage" destination="IWq-xO-Omj" id="LJq-mk-45l"/>
+            </connections>
             <point key="canvasLocation" x="87.681159420289859" y="44.196428571428569"/>
         </collectionViewCell>
     </objects>

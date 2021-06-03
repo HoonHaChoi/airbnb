@@ -79,6 +79,7 @@ class SearchResultViewController: UIViewController {
     @IBAction func MoveMapButtonTouched(_ sender: Any) {
         let mapViewController = UIStoryboard.create(identifier: MapViewController.self, name: "Map")
         mapViewController.modalPresentationStyle = .fullScreen
+        mapViewController.injectViewModel(atViewModel: searchResultViewModel)
         self.present(mapViewController, animated: true, completion: nil)
     }
     

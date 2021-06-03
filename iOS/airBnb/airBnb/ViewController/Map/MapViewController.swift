@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Combine
 
 class MapViewController: UIViewController {
     
@@ -22,14 +23,15 @@ class MapViewController: UIViewController {
         CLLocationCoordinate2D(latitude: 37.58769, longitude: 126.92450),
         CLLocationCoordinate2D(latitude: 37.59769, longitude: 126.92450)]
     
+    private var searchResultViewModel: SearchResultViewModel?
+    private var searchResult: [Room] = []
+    private var cancellable = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        
-        _ = (0...4).map { index in
-            mapView.addAnnotation(Marker(title: prices[index], coordinate: locations[index]))
-        }
         mapView.delegate = self
+        bind()
     }
     
     private func configureCollectionView() {
@@ -44,6 +46,23 @@ class MapViewController: UIViewController {
         cardCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
     }
     
+    func injectViewModel(atViewModel searchResult: SearchResultViewModel) {
+        self.searchResultViewModel = searchResult
+    }
+    
+    private func bind() {
+        searchResultViewModel?.fetchSearchResultRooms().sink { [weak self] room in
+            self?.searchResult = room
+            self?.cardCollectionView.reloadData()
+            room.forEach { info in
+                print(info.id)
+                self?.mapView.addAnnotation(Marker(title: info.rentalFeePerNight.convertWon(),
+                                             coordinate: CLLocationCoordinate2D(latitude: info.latitude,
+                                                                                longitude: info.longitude)))
+            }
+        }.store(in: &cancellable)
+    }
+    
     @IBAction func closeButtonTouched(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -51,13 +70,14 @@ class MapViewController: UIViewController {
 
 extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return searchResult.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as? CardCell else {
             return .init()
         }
+        cell.configure(from: searchResult[indexPath.row])
         return cell
     }
     
