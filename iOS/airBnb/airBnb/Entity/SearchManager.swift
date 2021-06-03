@@ -98,7 +98,7 @@ class SearchManager {
     }
     
     func fetchQueryString() -> (location: Int, checkIn: String, checkOut: String, priceMin: Int, priceMax: Int, adults: Int, children: Int, infants: Int) {
-        return (location: 20,
+        return (location: 19,
                 checkIn: selectDates.showSelectDate().start,
                 checkOut: selectDates.showSelectDate().end,
                 priceMin: priceRange.showRangePrice().min,

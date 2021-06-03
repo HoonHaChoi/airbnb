@@ -13,7 +13,7 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DP0-Zf-FOS" customClass="SearchResultCell" customModule="airBnb" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="344" height="365"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WOE-v1-a3q">
+            <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WOE-v1-a3q">
                 <rect key="frame" x="0.0" y="0.0" width="344" height="365"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
@@ -89,37 +89,11 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-r0-Hx8">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-r0-Hx8">
                         <rect key="frame" x="0.0" y="0.0" width="344" height="219"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvx-Sm-Ybu">
-                                <rect key="frame" x="0.0" y="0.0" width="1032" height="219"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainImage" translatesAutoresizingMaskIntoConstraints="NO" id="iRK-ve-XSi">
-                                        <rect key="frame" x="0.0" y="0.0" width="344" height="219"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainImage" translatesAutoresizingMaskIntoConstraints="NO" id="3BS-3h-juR">
-                                        <rect key="frame" x="344" y="0.0" width="344" height="219"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainImage" translatesAutoresizingMaskIntoConstraints="NO" id="wTt-88-hF6">
-                                        <rect key="frame" x="688" y="0.0" width="344" height="219"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                </subviews>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvx-Sm-Ybu">
+                                <rect key="frame" x="0.0" y="0.0" width="344" height="219"/>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -131,6 +105,11 @@
                         </constraints>
                         <viewLayoutGuide key="contentLayoutGuide" id="HoU-DY-A1L"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="YSy-zU-qSA"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </scrollView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbW-he-jJA">
                         <rect key="frame" x="305" y="19" width="21" height="20"/>
@@ -143,17 +122,14 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wTt-88-hF6" firstAttribute="width" secondItem="WOE-v1-a3q" secondAttribute="width" id="0cq-Zz-yje"/>
                     <constraint firstItem="hU8-r0-Hx8" firstAttribute="height" secondItem="WOE-v1-a3q" secondAttribute="height" multiplier="0.6" id="2hm-O6-yJ6"/>
                     <constraint firstItem="F3d-wT-4MZ" firstAttribute="top" secondItem="hU8-r0-Hx8" secondAttribute="bottom" constant="8" id="GKK-Cc-wol"/>
                     <constraint firstItem="F3d-wT-4MZ" firstAttribute="leading" secondItem="WOE-v1-a3q" secondAttribute="leading" id="PAb-ND-RAC"/>
                     <constraint firstItem="ZbW-he-jJA" firstAttribute="top" secondItem="WOE-v1-a3q" secondAttribute="top" constant="19" id="RER-2w-hPV"/>
                     <constraint firstItem="hU8-r0-Hx8" firstAttribute="leading" secondItem="WOE-v1-a3q" secondAttribute="leading" id="TbU-cN-ZZg"/>
                     <constraint firstAttribute="trailing" secondItem="ZbW-he-jJA" secondAttribute="trailing" constant="18" id="UGY-mw-aoE"/>
-                    <constraint firstItem="3BS-3h-juR" firstAttribute="width" secondItem="WOE-v1-a3q" secondAttribute="width" id="X3u-3Q-Fad"/>
                     <constraint firstAttribute="trailing" secondItem="hU8-r0-Hx8" secondAttribute="trailing" id="eV9-hQ-SPj"/>
                     <constraint firstItem="hU8-r0-Hx8" firstAttribute="top" secondItem="WOE-v1-a3q" secondAttribute="top" id="esR-MZ-u5n"/>
-                    <constraint firstItem="iRK-ve-XSi" firstAttribute="width" secondItem="WOE-v1-a3q" secondAttribute="width" id="lYB-9Z-gCS"/>
                     <constraint firstAttribute="trailing" secondItem="F3d-wT-4MZ" secondAttribute="trailing" id="p05-ff-fBm"/>
                 </constraints>
             </collectionViewCellContentView>
@@ -170,7 +146,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="MainImage" width="375" height="488"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="DistanceColor">

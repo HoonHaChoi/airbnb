@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class SearchResultCell: UICollectionViewCell {
     static var nib = UINib(nibName: identifier, bundle: nil)
+    
+    private var cancellable = Set<AnyCancellable>()
     
     @IBOutlet weak var thumbNailImagesStackView: UIStackView!
     @IBOutlet weak var avgRatingLabel: UILabel!
@@ -23,5 +26,27 @@ class SearchResultCell: UICollectionViewCell {
         roomTitle.text = room.name
         rentalPriceLabel.text = "\(room.rentalFeePerNight.convertWon()) / 박"
         rentalTotalPriceLabel.text = "총액 \((room.rentalFeePerNight * days).convertWon())"
+        
+        imagesLoad(at: room.images)
+    }
+    
+    func imagesLoad(at images: [String]) {
+        thumbNailImagesStackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
+        images.forEach { [unowned self] url in
+            let imageView = UIImageView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            thumbNailImagesStackView.addArrangedSubview(imageView)
+            
+            ImageLoader().load(url: url)
+                .receive(on: DispatchQueue.main)
+                .sink { imageURL in
+                    imageView.image = UIImage(contentsOfFile: imageURL)
+                    imageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+                    imageView.heightAnchor.constraint(equalTo: self.thumbNailImagesStackView.heightAnchor).isActive = true
+            }.store(in: &cancellable)
+        }
     }
 }

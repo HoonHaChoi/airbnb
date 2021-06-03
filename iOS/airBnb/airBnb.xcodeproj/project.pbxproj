@@ -22,6 +22,8 @@
 		BF3FDA7D2667E6920007D782 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA7C2667E6920007D782 /* SearchResultViewModel.swift */; };
 		BF3FDA9226687C9A0007D782 /* SearchResultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA9126687C9A0007D782 /* SearchResultDataSource.swift */; };
 		BF3FDA9426689FF70007D782 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA9326689FF70007D782 /* Int+Extension.swift */; };
+		BF3FDA962668C5070007D782 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA952668C5070007D782 /* ImageRequest.swift */; };
+		BF3FDA982668D74C0007D782 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FDA972668D74C0007D782 /* ImageLoader.swift */; };
 		BF4048CF2658CB4600CA02B5 /* LocationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */; };
 		BF4048D22658D8AA00CA02B5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */; };
 		BF4048D52658D8C500CA02B5 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4048D42658D8C500CA02B5 /* Calendar.storyboard */; };
@@ -100,6 +102,8 @@
 		BF3FDA7C2667E6920007D782 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		BF3FDA9126687C9A0007D782 /* SearchResultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDataSource.swift; sourceTree = "<group>"; };
 		BF3FDA9326689FF70007D782 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		BF3FDA952668C5070007D782 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		BF3FDA972668D74C0007D782 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultViewController.swift; sourceTree = "<group>"; };
 		BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BF4048D42658D8C500CA02B5 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				BF40490B265A415300CA02B5 /* HTTPMethod.swift */,
 				BF40490E265A417000CA02B5 /* NetworkError.swift */,
 				BF404908265A3F0A00CA02B5 /* SearchAPI.swift */,
+				BF3FDA952668C5070007D782 /* ImageRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			children = (
 				BF404918265A815400CA02B5 /* SearchLocationUseCase.swift */,
 				BF3FDA782667E3410007D782 /* SearchResultUseCase.swift */,
+				BF3FDA972668D74C0007D782 /* ImageLoader.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				BF2FEAE9265BE0730022CB93 /* SearchConditionViewModel.swift in Sources */,
 				BF4773D326639442000E2492 /* SearchResultHeaderView.swift in Sources */,
 				BF7E2E42265FBC5300A810BE /* SequenceDates.swift in Sources */,
+				BF3FDA982668D74C0007D782 /* ImageLoader.swift in Sources */,
 				BFE4310626554B3600F4DA1C /* LocationCell.swift in Sources */,
 				BF2FEAF0265C20230022CB93 /* Date+Extension.swift in Sources */,
 				BF3FDA792667E3410007D782 /* SearchResultUseCase.swift in Sources */,
@@ -573,6 +580,7 @@
 				BFE430D526541D2B00F4DA1C /* LocationSearchViewController.swift in Sources */,
 				BF7E2E702660BC0500A810BE /* ButtonMapper.swift in Sources */,
 				BF4048DB2658F53C00CA02B5 /* CalendarManager.swift in Sources */,
+				BF3FDA962668C5070007D782 /* ImageRequest.swift in Sources */,
 				BF404906265A3F0000CA02B5 /* Endpoint.swift in Sources */,
 				BF7DDCAA2665043900DCB6A7 /* BadgeLabel.swift in Sources */,
 				BF404901265A17CC00CA02B5 /* SearchManager.swift in Sources */,
