@@ -64,4 +64,13 @@ struct SequenceDates {
         return (start: start?.convertYearMonthDayString() ?? "",
                 end: end?.convertYearMonthDayString() ?? "")
     }
+    
+    func compareDates() -> Int {
+        guard let end = end, let start = start else {
+            return 1
+        }
+        let interval = end.timeIntervalSince(start)
+        let days = Int(interval / 86400)
+        return days
+    }
 }

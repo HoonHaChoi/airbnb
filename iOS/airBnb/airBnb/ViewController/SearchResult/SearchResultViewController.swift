@@ -19,7 +19,10 @@ class SearchResultViewController: UIViewController {
     private var cancellable = Set<AnyCancellable>()
     
     private lazy var backButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "뒤로", style: .done, target: self, action: #selector(resetSearchResult(_:)))
+        let button = UIBarButtonItem(title: "뒤로",
+                                     style: .done,
+                                     target: self,
+                                     action: #selector(resetSearchResult(_:)))
         return button
     }()
     
@@ -40,8 +43,11 @@ class SearchResultViewController: UIViewController {
     private func configureSearchResultCollection() {
         searchResultCollection.dataSource = searchResultDataSource
         searchResultCollection.delegate = self
-        searchResultCollection.register(SearchResultCell.nib, forCellWithReuseIdentifier: SearchResultCell.identifier)
-        searchResultCollection.register(SearchResultHeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchResultHeaderView.identifier)
+        searchResultCollection.register(SearchResultCell.nib,
+                                        forCellWithReuseIdentifier: SearchResultCell.identifier)
+        searchResultCollection.register(SearchResultHeaderView.nib,
+                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                        withReuseIdentifier: SearchResultHeaderView.identifier)
     }
     
     private func configureSearchResultViewModel() {
@@ -56,7 +62,8 @@ class SearchResultViewController: UIViewController {
         searchResultViewModel.fetchSearchResultRooms()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] rooms in
-            self?.searchResultDataSource.updateRooms(to: rooms)
+                self?.searchResultDataSource.updateRooms(to: rooms,
+                                                         days: self?.searchManager?.compareSelectDate() ?? 0)
             self?.searchResultCollection.reloadData()
         }.store(in: &cancellable)
     }

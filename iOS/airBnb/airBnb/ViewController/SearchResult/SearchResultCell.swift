@@ -17,10 +17,11 @@ class SearchResultCell: UICollectionViewCell {
     @IBOutlet weak var rentalPriceLabel: UILabel!
     @IBOutlet weak var rentalTotalPriceLabel: UILabel!
     
-    func configure(from room: Room) {
+    func configure(from room: Room, days: Int) {
         avgRatingLabel.text = "\(room.avgRating)"
         roomPropertyLabel.text = room.roomAndPropertyType
         roomTitle.text = room.name
         rentalPriceLabel.text = "\(room.rentalFeePerNight.convertWon()) / 박"
+        rentalTotalPriceLabel.text = "총액 \((room.rentalFeePerNight * days).convertWon())"
     }
 }

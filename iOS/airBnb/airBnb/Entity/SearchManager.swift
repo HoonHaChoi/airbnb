@@ -32,6 +32,10 @@ class SearchManager {
         selectDates.selectDay(with: day)
     }
     
+    func compareSelectDate() -> Int {
+        selectDates.compareDates()
+    }
+    
     func reset(in state: ScreenState) {
         switch state {
         case .calerdar:
