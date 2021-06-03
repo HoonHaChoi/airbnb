@@ -136,6 +136,7 @@
             <size key="customSize" width="344" height="365"/>
             <connections>
                 <outlet property="avgRatingLabel" destination="lvS-N8-TYu" id="SVU-aM-3eD"/>
+                <outlet property="numOfReview" destination="f5g-b5-aG3" id="35h-Zp-tQt"/>
                 <outlet property="rentalPriceLabel" destination="PFi-HZ-6eb" id="0qh-Fm-OG8"/>
                 <outlet property="rentalTotalPriceLabel" destination="lvi-4q-tJ2" id="TxG-Am-Zxg"/>
                 <outlet property="roomPropertyLabel" destination="DZ4-LZ-vrR" id="rgf-lh-L0b"/>

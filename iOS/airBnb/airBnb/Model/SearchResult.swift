@@ -21,4 +21,6 @@ struct Room: Decodable {
     let description: String
     let personCapacity, bedrooms, beds, bathrooms: Int
     let images, amenities: [String]
+    let numOfReview: Int
+    let hostName: String
 }
