@@ -106,7 +106,12 @@ extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let searchResultDTO = searchResultDTO else {
+            return
+        }
         let detailViewController = UIStoryboard.create(identifier: DetailViewController.self, name: "Detail")
+        detailViewController.injectRoomInfo(at: searchResultDataSource.fetchRoomDetail(at: indexPath.row),
+                                            from: searchResultDTO.showCheckDate())
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

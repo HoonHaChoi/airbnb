@@ -29,6 +29,12 @@ struct SearchResultDTO {
     }
     
     func showSearchCondition() -> String {
-        return "어딘가・" + "\(checkIn)" + " - " + "\(checkOut)" + "・게스트 " + "\(adults+children)" + "명"
+        return "어딘가・" + "\(checkIn.changeDateFormat())" + " - " + "\(checkOut.changeDateFormat())" + "・게스트 " + "\(adults+children)" + "명"
     }
+    
+    func showCheckDate() -> (start: String, end: String) {
+        return (start: checkIn, end:checkOut)
+    }
+    
+    
 }

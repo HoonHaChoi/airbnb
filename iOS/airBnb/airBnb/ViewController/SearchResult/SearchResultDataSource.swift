@@ -49,4 +49,7 @@ final class SearchResultDataSource: NSObject, UICollectionViewDataSource {
         return headerView
     }
     
+    func fetchRoomDetail(at id: Int) -> Room {
+        return rooms[id]
+    }
 }

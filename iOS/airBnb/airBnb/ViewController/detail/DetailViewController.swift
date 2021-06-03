@@ -6,11 +6,21 @@
 //
 
 import UIKit
+import Combine
 
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var detailImageStackView: UIStackView!
+    @IBOutlet weak var roomTitleLable: UILabel!
+    @IBOutlet weak var avgRatingLabel: UILabel!
+    @IBOutlet weak var reviewCountLabel: UILabel!
+    @IBOutlet weak var roomPropertyTypeLable: UILabel!
+    @IBOutlet weak var hostName: UILabel!
+    @IBOutlet weak var roomInfoLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var roomPriceLabel: UILabel!
+    @IBOutlet weak var selectDatesLabel: UILabel!
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -23,6 +33,10 @@ class DetailViewController: UIViewController {
         return button
     }()
     
+    private var room: Room?
+    private var selectDates: (start: String, end: String)?
+    private var cancellable = Set<AnyCancellable>()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
@@ -35,10 +49,45 @@ class DetailViewController: UIViewController {
         button.widthAnchor.constraint(equalToConstant: 44).isActive = true
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
+        showRoomInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    func injectRoomInfo(at room: Room, from selectDates: (start: String, end: String)) {
+        self.room = room
+        self.selectDates = selectDates
+    }
+    
+    func showRoomInfo() {
+        guard let room = room,let selectDates = selectDates  else {
+            return
+        }
+        roomTitleLable.text = room.name
+        avgRatingLabel.text = "\(room.avgRating)"
+        reviewCountLabel.text = "(후기 \(room.numOfReview)개)"
+        roomPropertyTypeLable.text = room.roomAndPropertyType
+        hostName.text = "호스트: " + room.hostName
+        roomInfoLabel.text  = "최대인원 \(room.personCapacity)명 침실 \(room.bedrooms)개 침대 \(room.beds)개 욕실 \(room.bathrooms)개"
+        descriptionLabel.text = room.description
+        
+        roomPriceLabel.text = room.rentalFeePerNight.convertWon() + "/ 박"
+        selectDatesLabel.text = selectDates.start.changeDateFormat() + " - " + selectDates.end.changeDateFormat()
+        
+        room.images.forEach { url in
+            let imageView = UIImageView()
+            
+            detailImageStackView.addArrangedSubview(imageView)
+            ImageLoader().load(url: url)
+                .receive(on: DispatchQueue.main)
+                .sink { [unowned self] imageURL in
+                    imageView.image = UIImage(contentsOfFile: imageURL)
+                    imageView.heightAnchor.constraint(equalTo: self.detailImageStackView.heightAnchor).isActive = true
+                    imageView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+                }.store(in: &cancellable)
+        }
     }
     
     @IBAction func reservationButtonTouched(_ sender: UIButton) {

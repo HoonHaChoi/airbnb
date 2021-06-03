@@ -36,7 +36,7 @@ class SearchResultCell: UICollectionViewCell {
             view.removeFromSuperview()
         }
         
-        images.forEach { [unowned self] url in
+        images.forEach { url in
             let imageView = UIImageView()
             imageView.translatesAutoresizingMaskIntoConstraints = false
             thumbNailImagesStackView.addArrangedSubview(imageView)

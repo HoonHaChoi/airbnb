@@ -42,10 +42,15 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(후기 123개)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5g-b5-aG3">
                                                 <rect key="frame" x="56" y="0.0" width="64.5" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="BoardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="f5g-b5-aG3" firstAttribute="centerY" secondItem="ZeG-k3-e2G" secondAttribute="centerY" id="IeN-X6-9H0"/>
+                                            <constraint firstItem="lvS-N8-TYu" firstAttribute="centerY" secondItem="ZeG-k3-e2G" secondAttribute="centerY" id="KDh-Ok-Fko"/>
+                                            <constraint firstItem="Ssm-Xi-P3u" firstAttribute="centerY" secondItem="ZeG-k3-e2G" secondAttribute="centerY" id="LOK-c3-Dvk"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -97,11 +102,11 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="fvx-Sm-Ybu" secondAttribute="bottom" id="Lag-qM-ol0"/>
-                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="leading" secondItem="hU8-r0-Hx8" secondAttribute="leading" id="gwj-Ku-nnZ"/>
-                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="height" secondItem="hU8-r0-Hx8" secondAttribute="height" id="j27-NL-jJz"/>
-                            <constraint firstAttribute="trailing" secondItem="fvx-Sm-Ybu" secondAttribute="trailing" id="sMD-Vs-OXb"/>
-                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="top" secondItem="hU8-r0-Hx8" secondAttribute="top" id="yBD-WT-1sm"/>
+                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="trailing" secondItem="HoU-DY-A1L" secondAttribute="trailing" constant="344" id="P2b-ex-TUY"/>
+                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="bottom" secondItem="HoU-DY-A1L" secondAttribute="bottom" constant="219" id="lPV-Tu-i8D"/>
+                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="leading" secondItem="HoU-DY-A1L" secondAttribute="leading" id="mbO-cS-xgm"/>
+                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="height" secondItem="YSy-zU-qSA" secondAttribute="height" id="mus-J8-u6I"/>
+                            <constraint firstItem="fvx-Sm-Ybu" firstAttribute="top" secondItem="HoU-DY-A1L" secondAttribute="top" id="x8h-eo-dgt"/>
                         </constraints>
                         <viewLayoutGuide key="contentLayoutGuide" id="HoU-DY-A1L"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="YSy-zU-qSA"/>
@@ -149,6 +154,9 @@
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="BoardColor">
+            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DistanceColor">
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -31,5 +31,15 @@ extension DateFormatter {
         self.dateFormat = "yyyy-MM-dd"
         return self.string(from: date)
     }
+    
+    func convertStringToDate(dateString: String) -> Date {
+        self.dateFormat = "yyyy-MM-dd"
+        return self.date(from: dateString) ?? Date()
+    }
+    
+    func convertDateToString(date: Date) -> String {
+        self.dateFormat = "M월 d일"
+        return self.string(from: date)
+    }
 }
 

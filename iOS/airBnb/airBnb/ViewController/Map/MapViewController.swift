@@ -14,15 +14,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var mapView: MKMapView!
     
-    // 더미 가격 리스트
-    let prices = ["₩82,953", "₩52,953", "₩32,953", "₩112,953", "₩900,953"]
-    let locations = [
-        CLLocationCoordinate2D(latitude: 37.55769, longitude: 126.92450),
-        CLLocationCoordinate2D(latitude: 37.56769, longitude: 126.92450),
-        CLLocationCoordinate2D(latitude: 37.57769, longitude: 126.92450),
-        CLLocationCoordinate2D(latitude: 37.58769, longitude: 126.92450),
-        CLLocationCoordinate2D(latitude: 37.59769, longitude: 126.92450)]
-    
     private var searchResultViewModel: SearchResultViewModel?
     private var searchResult: [Room] = []
     private var cancellable = Set<AnyCancellable>()
@@ -55,7 +46,6 @@ class MapViewController: UIViewController {
             self?.searchResult = room
             self?.cardCollectionView.reloadData()
             room.forEach { info in
-                print(info.id)
                 self?.mapView.addAnnotation(Marker(title: info.rentalFeePerNight.convertWon(),
                                              coordinate: CLLocationCoordinate2D(latitude: info.latitude,
                                                                                 longitude: info.longitude)))
