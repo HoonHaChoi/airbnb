@@ -32,7 +32,7 @@ final class SearchResultViewModel {
                     self.errorMessage = error.description
                 }
             } receiveValue: { rooms in
-                self.searchResult = rooms.room
+                self.searchResult = rooms.rooms
             }.store(in: &cancellable)
     }
     
@@ -40,5 +40,9 @@ final class SearchResultViewModel {
         return $errorMessage
             .dropFirst()
             .eraseToAnyPublisher()
+    }
+    
+    func fetchSearchResultRooms() -> AnyPublisher<[Room], Never> {
+        return $searchResult.eraseToAnyPublisher()
     }
 }

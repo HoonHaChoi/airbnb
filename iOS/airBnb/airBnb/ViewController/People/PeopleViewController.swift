@@ -83,6 +83,7 @@ class PeopleViewController: UIViewController {
         
         nextViewControllerSubject.sink { (_) in
             let searchResultController = UIStoryboard.create(identifier: SearchResultViewController.self, name: "SearchResult")
+            searchResultController.injectSearchManager(from: self.searchManager)
             self.navigationController?.pushViewController(searchResultController, animated: true)
         }.store(in: &cancellable)
     }

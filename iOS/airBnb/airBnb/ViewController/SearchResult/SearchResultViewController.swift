@@ -6,13 +6,17 @@
 //
 
 import UIKit
+import Combine
 
 class SearchResultViewController: UIViewController {
 
     @IBOutlet weak var searchResultCollection: UICollectionView!
     
     private var searchResultViewModel = SearchResultViewModel()
+    private var searchResultDataSource = SearchResultDataSource()
     private var searchManager: SearchManager?
+    
+    private var cancellable = Set<AnyCancellable>()
     
     private lazy var backButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "뒤로", style: .done, target: self, action: #selector(resetSearchResult(_:)))
@@ -24,6 +28,7 @@ class SearchResultViewController: UIViewController {
         configureSearchResultCollection()
         configureSearchResultViewModel()
         navigationItem.leftBarButtonItem = backButton
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +38,7 @@ class SearchResultViewController: UIViewController {
     }
     
     private func configureSearchResultCollection() {
-        searchResultCollection.dataSource = self
+        searchResultCollection.dataSource = searchResultDataSource
         searchResultCollection.delegate = self
         searchResultCollection.register(SearchResultCell.nib, forCellWithReuseIdentifier: SearchResultCell.identifier)
         searchResultCollection.register(SearchResultHeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchResultHeaderView.identifier)
@@ -48,7 +53,16 @@ class SearchResultViewController: UIViewController {
     }
     
     private func bind() {
-        
+        searchResultViewModel.fetchSearchResultRooms()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] rooms in
+            self?.searchResultDataSource.updateRooms(to: rooms)
+            self?.searchResultCollection.reloadData()
+        }.store(in: &cancellable)
+    }
+    
+    func injectSearchManager(from manager: SearchManager?) {
+        self.searchManager = manager
     }
     
     @IBAction func MoveMapButtonTouched(_ sender: Any) {
@@ -69,21 +83,7 @@ class SearchResultViewController: UIViewController {
     }
 }
 
-extension SearchResultViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCell.identifier, for: indexPath) as? SearchResultCell else {
-            return .init()
-        }
-        return cell
-    }
+extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 380)

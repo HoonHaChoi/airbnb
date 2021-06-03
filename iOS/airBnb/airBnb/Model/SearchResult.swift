@@ -8,17 +8,17 @@
 import Foundation
 
 struct Rooms: Decodable {
-    let room: [Room]
+    let rooms: [Room]
 }
 
 struct Room: Decodable {
-    let id, locationID, hostID, themeID: Int
-    let latitude, longitude: Int
+    let id, locationId, hostId, themeId: Int
+    let latitude, longitude: Double
     let name, roomAndPropertyType: String
     let avgRating: Double
     let rentalFeePerNight: Int
     let weeklyPriceFactor, monthlyPriceFactor: Double
-    let roomDescription: String
+    let description: String
     let personCapacity, bedrooms, beds, bathrooms: Int
-    let images, amenities: [String]    
+    let images, amenities: [String]
 }
