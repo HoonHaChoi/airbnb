@@ -27,4 +27,8 @@ struct SearchResultDTO {
         self.children = data.children
         self.infants = data.infants
     }
+    
+    func showSearchCondition() -> String {
+        return "어딘가・" + "\(checkIn)" + " - " + "\(checkOut)" + "・게스트 " + "\(adults+children)" + "명"
+    }
 }

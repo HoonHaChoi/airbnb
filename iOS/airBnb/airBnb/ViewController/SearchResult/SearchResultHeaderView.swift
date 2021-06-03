@@ -8,9 +8,14 @@
 import UIKit
 
 class SearchResultHeaderView: UICollectionReusableView {
-    static var identifier: String {
-        return String(describing: self)
-    }
     
-    static var nib = UINib(nibName: identifier, bundle: nil)
+    static var nib = UINib(nibName: reuseidentifier, bundle: nil)
+    
+    @IBOutlet weak var searchConditionLabel: UILabel!
+    @IBOutlet weak var searchConditionCountLabel: UILabel!
+    
+    func configure(from condition: String, count: Int) {
+        searchConditionLabel.text = condition
+        searchConditionCountLabel.text = "\(count)개 이상의 숙소"
+    }
 }

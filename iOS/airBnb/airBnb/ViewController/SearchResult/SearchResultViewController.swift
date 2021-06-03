@@ -9,13 +9,13 @@ import UIKit
 import Combine
 
 class SearchResultViewController: UIViewController {
-
+    
     @IBOutlet weak var searchResultCollection: UICollectionView!
     
     private var searchResultViewModel = SearchResultViewModel()
     private var searchResultDataSource = SearchResultDataSource()
     private var searchManager: SearchManager?
-    
+    private var searchResultDTO: SearchResultDTO?
     private var cancellable = Set<AnyCancellable>()
     
     private lazy var backButton: UIBarButtonItem = {
@@ -47,15 +47,18 @@ class SearchResultViewController: UIViewController {
                                         forCellWithReuseIdentifier: SearchResultCell.identifier)
         searchResultCollection.register(SearchResultHeaderView.nib,
                                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                        withReuseIdentifier: SearchResultHeaderView.identifier)
+                                        withReuseIdentifier: SearchResultHeaderView.reuseidentifier)
     }
     
     private func configureSearchResultViewModel() {
         guard let manager = searchManager else {
             return
         }
-        let searchResultDTO = SearchResultDTO(data: manager.fetchQueryString())
-        searchResultViewModel.requestSearchResult(from: searchResultDTO)
+        searchResultDTO = SearchResultDTO(data: manager.fetchQueryString())
+        guard let dto = searchResultDTO else {
+            return
+        }
+        searchResultViewModel.requestSearchResult(from: dto)
     }
     
     private func bind() {
@@ -63,9 +66,10 @@ class SearchResultViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] rooms in
                 self?.searchResultDataSource.updateRooms(to: rooms,
-                                                         days: self?.searchManager?.compareSelectDate() ?? 0)
-            self?.searchResultCollection.reloadData()
-        }.store(in: &cancellable)
+                                                         days: self?.searchManager?.compareSelectDate() ?? 0,
+                                                         condition: self?.searchResultDTO?.showSearchCondition() ?? "")
+                self?.searchResultCollection.reloadData()
+            }.store(in: &cancellable)
     }
     
     func injectSearchManager(from manager: SearchManager?) {
@@ -94,13 +98,6 @@ extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 380)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SearchResultHeaderView.identifier, for: indexPath) as? SearchResultHeaderView else {
-            return .init()
-        }
-        return headerView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

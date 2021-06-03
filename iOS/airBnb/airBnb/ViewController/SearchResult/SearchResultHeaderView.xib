@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,6 +38,10 @@
                 <constraint firstItem="KPo-dn-Ia3" firstAttribute="leading" secondItem="LpB-5k-A2r" secondAttribute="leading" id="h3D-Cc-Tl0"/>
                 <constraint firstItem="KPo-dn-Ia3" firstAttribute="centerY" secondItem="ZPc-Ll-B2s" secondAttribute="centerY" id="hF5-LX-sto"/>
             </constraints>
+            <connections>
+                <outlet property="searchConditionCountLabel" destination="eyb-23-nNE" id="yw2-QG-Ava"/>
+                <outlet property="searchConditionLabel" destination="mkd-94-aJ5" id="Q2j-v9-roN"/>
+            </connections>
             <point key="canvasLocation" x="-83.333333333333343" y="235.04464285714283"/>
         </collectionReusableView>
     </objects>
