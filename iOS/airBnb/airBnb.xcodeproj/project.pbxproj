@@ -69,6 +69,7 @@
 		BF7E2E702660BC0500A810BE /* ButtonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E2E6F2660BC0500A810BE /* ButtonMapper.swift */; };
 		BF974DBB2669D07100C0005A /* ReservationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF974DBA2669D07100C0005A /* ReservationUseCase.swift */; };
 		BF974DBD2669D11000C0005A /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF974DBC2669D11000C0005A /* ReservationViewModel.swift */; };
+		BF974DBF266A0A6200C0005A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF974DBE266A0A6200C0005A /* UIView+Extension.swift */; };
 		BF9B8A362665DA7F00E0F35A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9B8A352665DA7F00E0F35A /* Detail.storyboard */; };
 		BF9B8A382666029500E0F35A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B8A372666029500E0F35A /* DetailViewController.swift */; };
 		BF9F9509265DE6D4003CF475 /* UIStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F9508265DE6D4003CF475 /* UIStoryBoard+Extension.swift */; };
@@ -152,6 +153,7 @@
 		BF7E2E6F2660BC0500A810BE /* ButtonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMapper.swift; sourceTree = "<group>"; };
 		BF974DBA2669D07100C0005A /* ReservationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationUseCase.swift; sourceTree = "<group>"; };
 		BF974DBC2669D11000C0005A /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
+		BF974DBE266A0A6200C0005A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BF9B8A352665DA7F00E0F35A /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		BF9B8A372666029500E0F35A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF9F9508265DE6D4003CF475 /* UIStoryBoard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Extension.swift"; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				BF7E2E49265FCF6D00A810BE /* CGFloat+Extension.swift */,
 				BF7DDCAD266540A000DCB6A7 /* UICollectionReusableView+Extension.swift */,
 				BF3FDA9326689FF70007D782 /* Int+Extension.swift */,
+				BF974DBE266A0A6200C0005A /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				BF4773DB2663B619000E2492 /* MapViewController.swift in Sources */,
 				BF4048D22658D8AA00CA02B5 /* CalendarViewController.swift in Sources */,
 				BF4048EB26592AAF00CA02B5 /* CalendarDataSource.swift in Sources */,
+				BF974DBF266A0A6200C0005A /* UIView+Extension.swift in Sources */,
 				BF9F9513265DED03003CF475 /* UIColor+Extension.swift in Sources */,
 				BF7E2E3E265FA36F00A810BE /* PriceSliderLayer.swift in Sources */,
 				BF7E2E5D2660B23E00A810BE /* KidCountState.swift in Sources */,

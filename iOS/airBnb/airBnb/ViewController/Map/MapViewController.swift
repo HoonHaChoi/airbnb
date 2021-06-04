@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var closeButton: UIButton!
     
     private var searchResultViewModel: SearchResultViewModel?
     private var searchResult: [Room] = []
@@ -25,6 +26,8 @@ class MapViewController: UIViewController {
         bind()
         
         goLocation(latitude: 37.568394, longtude: 126.948258, delta: 0.1)
+        
+        closeButton.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
     }
     
     private func configureCollectionView() {
@@ -108,6 +111,7 @@ extension MapViewController: MKMapViewDelegate {
         let annotationLabel = BadgeLabel()
         annotationLabel.configure(text: annotation.title ?? "")
         annotationLabel.sizeToFit()
+        annotationLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
         annotationLabel.updateFrame()
         annotationView.addSubview(annotationLabel)
         annotationView.canShowCallout = true

@@ -30,6 +30,7 @@ class DetailViewController: UIViewController {
         button.layer.cornerRadius = 22
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(closeView(_:)), for: .touchUpInside)
+        button.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
         return button
     }()
     

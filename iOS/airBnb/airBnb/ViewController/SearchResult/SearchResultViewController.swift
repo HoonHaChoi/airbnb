@@ -32,6 +32,7 @@ class SearchResultViewController: UIViewController {
         configureSearchResultViewModel()
         navigationItem.leftBarButtonItem = backButton
         bind()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
