@@ -23,6 +23,8 @@ class MapViewController: UIViewController {
         configureCollectionView()
         mapView.delegate = self
         bind()
+        
+        goLocation(latitude: 37.568394, longtude: 126.948258, delta: 0.1)
     }
     
     private func configureCollectionView() {
@@ -52,6 +54,16 @@ class MapViewController: UIViewController {
             }
         }.store(in: &cancellable)
     }
+    
+    func goLocation(latitude: CLLocationDegrees,
+              longtude: CLLocationDegrees,
+              delta span: Double) -> CLLocationCoordinate2D {
+        let location = CLLocationCoordinate2DMake(latitude, longtude)
+        let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
+        let region = MKCoordinateRegion(center: location, span: spanValue)
+        mapView.setRegion(region, animated: true)
+        return location
+      }
     
     @IBAction func closeButtonTouched(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
