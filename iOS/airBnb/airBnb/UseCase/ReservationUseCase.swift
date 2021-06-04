@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol ReservationConfigurable {
-    func requestReservationInfo(at id: Int, from data: SearchResultDTO) -> AnyPublisher<[String:Int], NetworkError>
+    func requestReservationInfo(at id: Int, from data: SearchResultDTO) -> AnyPublisher<[String], NetworkError>
 }
 
 class ReservationUseCase: ReservationConfigurable {
@@ -24,7 +24,7 @@ class ReservationUseCase: ReservationConfigurable {
         self.init(networkManage: SearchAPI())
     }
     
-    func requestReservationInfo(at id: Int, from data: SearchResultDTO) -> AnyPublisher<[String:Int], NetworkError> {
+    func requestReservationInfo(at id: Int, from data: SearchResultDTO) -> AnyPublisher<[String], NetworkError> {
         return networkManager.requestReservation(at: id, from: data)
     }
 }

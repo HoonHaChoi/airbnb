@@ -14,7 +14,7 @@ class ReservationViewModel {
     private var cancellable = Set<AnyCancellable>()
     
     @Published private var errorMessage: String = ""
-    @Published private var priceForecast: [String:Int] = [:]
+    @Published private var priceForecast: [String] = []
     
     init(in reservationUseCase: ReservationConfigurable) {
         self.reservationUseCase = reservationUseCase
@@ -42,7 +42,7 @@ class ReservationViewModel {
             .eraseToAnyPublisher()
     }
     
-    func fetchPriceForecast() -> AnyPublisher<[String:Int], Never> {
+    func fetchPriceForecast() -> AnyPublisher<[String], Never> {
         return $priceForecast.eraseToAnyPublisher()
     }
     
