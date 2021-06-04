@@ -12,6 +12,7 @@ enum Endpoint {
     private static let host = "airbnb.clone.r-e.kr"
     private static let searchPath = "/api/search/"
     private static let loadingPath = "/api/rooms"
+    private static let reservationPath = "/estimate"
     
     static func searchLocationURL(text: String) -> URL? {
         var components = URLComponents()
@@ -29,6 +30,15 @@ enum Endpoint {
         components.queryItems = query
         return components.url
     }
+
+    static func accommodationInfoURL(id: Int, query: [URLQueryItem]) -> URL? {
+        var components = URLComponents()
+        components.scheme = Endpoint.scheme
+        components.host = Endpoint.host
+        components.path = loadingPath + "/\(id)" + reservationPath
+        components.queryItems = query
+        return components.url
+    }
     
     static func makeQueryItem(queryData: SearchResultDTO) -> [URLQueryItem] {
         return [
@@ -40,6 +50,14 @@ enum Endpoint {
             URLQueryItem(name: "adults", value: "\(queryData.adults)"),
             URLQueryItem(name: "children", value: "\(queryData.children)"),
             URLQueryItem(name: "infants", value: "\(queryData.infants)")
+        ]
+    }
+    
+    static func makeAccommodationInfoQuery(queryData: SearchResultDTO) -> [URLQueryItem] {
+        return [
+            URLQueryItem(name: "checkIn", value: "\(queryData.checkIn)"),
+            URLQueryItem(name: "checkOut", value: "\(queryData.checkOut)"),
+            URLQueryItem(name: "numOfPeople", value: "\(queryData.adults + queryData.children)")
         ]
     }
 }

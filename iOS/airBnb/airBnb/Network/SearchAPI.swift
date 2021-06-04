@@ -11,6 +11,7 @@ import Combine
 protocol SearchAPIProtocol {
     func requestLocation<T: Decodable>(from location: String) -> AnyPublisher<T,NetworkError>
     func requestSearchResult<T: Decodable>(from data: SearchResultDTO) -> AnyPublisher<T, NetworkError>
+    func requestReservation<T: Decodable>(at id: Int, from data: SearchResultDTO) -> AnyPublisher<T, NetworkError>
 }
 
 final class SearchAPI: SearchAPIProtocol {
@@ -24,6 +25,13 @@ final class SearchAPI: SearchAPIProtocol {
     
     func requestSearchResult<T: Decodable>(from data: SearchResultDTO) -> AnyPublisher<T, NetworkError> {
         guard let url = Endpoint.searchLoadingURL(query: Endpoint.makeQueryItem(queryData: data)) else {
+            return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
+        }
+        return request(from: url)
+    }
+    
+    func requestReservation<T: Decodable>(at id: Int, from data: SearchResultDTO) -> AnyPublisher<T, NetworkError> {
+        guard let url = Endpoint.accommodationInfoURL(id: id, query: Endpoint.makeAccommodationInfoQuery(queryData: data)) else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
         return request(from: url)

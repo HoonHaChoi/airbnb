@@ -111,7 +111,7 @@ extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
         }
         let detailViewController = UIStoryboard.create(identifier: DetailViewController.self, name: "Detail")
         detailViewController.injectRoomInfo(at: searchResultDataSource.fetchRoomDetail(at: indexPath.row),
-                                            from: searchResultDTO.showCheckDate())
+                                            from: searchResultDTO)
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

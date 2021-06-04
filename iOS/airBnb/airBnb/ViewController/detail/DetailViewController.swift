@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
     }()
     
     private var room: Room?
-    private var selectDates: (start: String, end: String)?
+    private var searchResultDTO: SearchResultDTO?
     private var cancellable = Set<AnyCancellable>()
         
     override func viewDidLoad() {
@@ -56,13 +56,13 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    func injectRoomInfo(at room: Room, from selectDates: (start: String, end: String)) {
+    func injectRoomInfo(at room: Room, from dto: SearchResultDTO) {
         self.room = room
-        self.selectDates = selectDates
+        self.searchResultDTO = dto
     }
     
     func showRoomInfo() {
-        guard let room = room,let selectDates = selectDates  else {
+        guard let room = room,let dto = searchResultDTO  else {
             return
         }
         roomTitleLable.text = room.name
@@ -74,7 +74,7 @@ class DetailViewController: UIViewController {
         descriptionLabel.text = room.description
         
         roomPriceLabel.text = room.rentalFeePerNight.convertWon() + "/ 박"
-        selectDatesLabel.text = selectDates.start.changeDateFormat() + " - " + selectDates.end.changeDateFormat()
+        selectDatesLabel.text = dto.showCheckDate().start.changeDateFormat() + " - " + dto.showCheckDate().end.changeDateFormat()
         
         room.images.forEach { url in
             let imageView = UIImageView()
@@ -93,6 +93,11 @@ class DetailViewController: UIViewController {
     @IBAction func reservationButtonTouched(_ sender: UIButton) {
         let reservationViewController = UIStoryboard.create(identifier: ReservationViewController.self, name: "Reservation")
         reservationViewController.modalPresentationStyle = .overFullScreen
+        
+        guard let room = room, let dto = searchResultDTO else {
+            return
+        }
+        reservationViewController.injectRoomAndSearchResultDTO(atRoom: room, atDTO: dto)
         self.present(reservationViewController, animated: true, completion: nil)
     }
     

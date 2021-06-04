@@ -22,7 +22,7 @@ final class SearchResultViewModel {
     
     convenience init() {
         let networkManager = SearchAPI()
-        self.init(in : SearchResultUseCase(networkManage: networkManager))
+        self.init(in: SearchResultUseCase(networkManage: networkManager))
     }
     
     func requestSearchResult(from data: SearchResultDTO) {
