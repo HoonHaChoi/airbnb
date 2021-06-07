@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var roomPriceLabel: UILabel!
     @IBOutlet weak var selectDatesLabel: UILabel!
+    @IBOutlet weak var amenitiesLabel: UILabel!
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -89,6 +90,11 @@ class DetailViewController: UIViewController {
                     imageView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
                 }.store(in: &cancellable)
         }
+        var amenitiesText = ""
+        room.amenities.forEach { info in
+            amenitiesText += "\(info) "
+        }
+        amenitiesLabel.text = amenitiesText
     }
     
     @IBAction func reservationButtonTouched(_ sender: UIButton) {
