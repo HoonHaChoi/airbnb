@@ -1,3 +1,11 @@
+## 프로젝트 결과 
+iOS 프로젝트<br>
+https://github.com/HoonHaChoi/airbnb/tree/dev/iOS
+
+FE 프로젝트<br>
+https://github.com/adelakim5/airbnb/tree/dev/FE
+
+
 ## 팀원
 - 노을 BE
 - 네오 IOS
