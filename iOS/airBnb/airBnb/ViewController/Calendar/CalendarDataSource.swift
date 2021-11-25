@@ -9,29 +9,32 @@ import UIKit
 
 class CalendarDataSource: NSObject, UICollectionViewDataSource {
     
-    private let dates: [String:[Date?]]
+    private let months: [String]
+    private let days: [[Date?]]
     private var sequenceDates: SequenceDates
     
-    init(dates: [String:[Date?]], sequenceDates: SequenceDates?) {
-        self.dates = dates
+    init(months: [String],
+        days: [[Date?]],
+        sequenceDates: SequenceDates?) {
+        self.months = months
+        self.days = days
         self.sequenceDates = sequenceDates ?? .init()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return dates.count
+        return months.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let datesSection = CalendarHelper.month(index: section)
-        return dates[datesSection]?.count ?? 0
+        return days[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarDayCell.identifier, for: indexPath) as? CalendarDayCell else {
             return .init()
         }
-        let month = CalendarHelper.month(index: indexPath.section)
-        let day = dates[month]?[indexPath.row]
+    
+        let day = days[indexPath.section][indexPath.row] ?? .init()
         cell.configure(day: day)
         cell.setupDaysRange(dates : sequenceDates, day: day)
         cell.selectDay(dates: sequenceDates, day: day)
@@ -42,8 +45,8 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         guard let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CalendarHeaderView.reuseidentifier, for: indexPath) as? CalendarHeaderView else {
             return .init()
         }
-        let month = CalendarHelper.month(index: indexPath.section)
-        headerview.updateLabel(text: month)
+        let monthString = months[indexPath.section]
+        headerview.updateLabel(text: monthString)
         return headerview
     }
     

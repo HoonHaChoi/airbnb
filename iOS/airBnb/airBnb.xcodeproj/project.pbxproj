@@ -28,7 +28,6 @@
 		BF4048CF2658CB4600CA02B5 /* LocationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */; };
 		BF4048D22658D8AA00CA02B5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */; };
 		BF4048D52658D8C500CA02B5 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4048D42658D8C500CA02B5 /* Calendar.storyboard */; };
-		BF4048DB2658F53C00CA02B5 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048DA2658F53C00CA02B5 /* CalendarManager.swift */; };
 		BF4048E42658FCAC00CA02B5 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048E32658FCAC00CA02B5 /* CalendarHelper.swift */; };
 		BF4048EB26592AAF00CA02B5 /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048EA26592AAF00CA02B5 /* CalendarDataSource.swift */; };
 		BF4048F12659335800CA02B5 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4048F02659335800CA02B5 /* CalendarDayCell.swift */; };
@@ -112,7 +111,6 @@
 		BF4048CE2658CB4600CA02B5 /* LocationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultViewController.swift; sourceTree = "<group>"; };
 		BF4048D12658D8AA00CA02B5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BF4048D42658D8C500CA02B5 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		BF4048DA2658F53C00CA02B5 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		BF4048E32658FCAC00CA02B5 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		BF4048EA26592AAF00CA02B5 /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		BF4048F02659335800CA02B5 /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
@@ -443,7 +441,6 @@
 				BF404904265A3EF100CA02B5 /* Network */,
 				BF4048D72658F48D00CA02B5 /* ViewController */,
 				BF4048D82658F4B000CA02B5 /* View */,
-				BF4048DA2658F53C00CA02B5 /* CalendarManager.swift */,
 				BF4048E32658FCAC00CA02B5 /* CalendarHelper.swift */,
 				BFE430BC2653903000F4DA1C /* Assets.xcassets */,
 				BFE430BE2653903000F4DA1C /* LaunchScreen.storyboard */,
@@ -595,7 +592,6 @@
 				BF2FEAED265BEFDB0022CB93 /* PriceViewController.swift in Sources */,
 				BFE430D526541D2B00F4DA1C /* LocationSearchViewController.swift in Sources */,
 				BF7E2E702660BC0500A810BE /* ButtonMapper.swift in Sources */,
-				BF4048DB2658F53C00CA02B5 /* CalendarManager.swift in Sources */,
 				BF3FDA962668C5070007D782 /* ImageRequest.swift in Sources */,
 				BF404906265A3F0000CA02B5 /* Endpoint.swift in Sources */,
 				BF7DDCAA2665043900DCB6A7 /* BadgeLabel.swift in Sources */,

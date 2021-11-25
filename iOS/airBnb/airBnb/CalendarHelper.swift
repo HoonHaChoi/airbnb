@@ -8,58 +8,61 @@
 import Foundation
 
 class CalendarHelper {
-    private static let oneYearRange = (0..<12)
-    private static let calendar = Calendar.current
-    private static let dateFormatter = DateFormatter()
+    private let oneYearRange = (0..<12)
+    private let calendar = Calendar.current
+    private let dateFormatter = DateFormatter()
     
-    static func makeCalenderDate() -> [String:[Date?]] {
-        var dates: [String:[Date?]] = [:]
+    private(set) var month: [String] = []
+    private(set) var days: [[Date?]] = []
+    
+    init() {
         oneYearRange.forEach { (value) in
-            let month = calendar.date(byAdding: .month, value: value, to: Date()) ?? Date()
-            let days = makeDays(date: month)
-            let months = dateFormatter.convertCalenderHeaderString(date: month)
-            dates[months] = days
+            let monthDate = calendar.date(byAdding: .month, value: value, to: Date()) ?? Date()
+            let convertMonthString = dateFormatter.convertCalenderHeaderString(date: monthDate)
+            
+            month.append(convertMonthString)
+            days.append(makeDays(date: monthDate))
         }
-        return dates
     }
     
-    static func makeDays(date: Date) -> [Date?] {
+    private  func makeDays(date: Date) -> [Date?] {
         var days: [Date?] = []
         let dayCount = daysInMonth(date: date)
         let firstDay = firstDayOfMonth(date: date)
-        let startingSpaces = weekDay(date: firstDay)
-        (1...dayCount + startingSpaces).forEach { (count) in
-            checkFirstDayRange(day: count) ?
+        let startingSpaces = weekDayCount(date: firstDay)
+        (0..<dayCount + startingSpaces).forEach { (count) in
+            checkFirstDayRange(day: count, spaceInt: startingSpaces) ?
                 days.append(nil) :
-                days.append(createDay(with: count - startingSpaces))
-        }
-        func createDay(with count: Int) -> Date {
-            return calendar.date(byAdding: .day, value: count - 1, to: firstDay) ?? Date()
-        }
-        
-        func checkFirstDayRange(day: Int) -> Bool {
-            return day <= startingSpaces
+                days.append(createDay(with: count - startingSpaces, firstDay: firstDay))
         }
         return days
     }
     
-    static func month(index: Int) -> String {
+    private func createDay(with count: Int, firstDay: Date) -> Date {
+        return calendar.date(byAdding: .day, value: count, to: firstDay) ?? Date()
+    }
+    
+    private func checkFirstDayRange(day: Int, spaceInt: Int) -> Bool {
+        return day < spaceInt
+    }
+    
+    func month(index: Int) -> String {
         let month = calendar.date(byAdding: .month, value: index, to: Date()) ?? Date()
         return dateFormatter.convertCalenderHeaderString(date: month)
     }
     
-    static func daysInMonth(date: Date) -> Int {
+    private func daysInMonth(date: Date) -> Int {
         let range = calendar.range(of: .day, in: .month, for: date)!
         return range.count
     }
     
-    static func firstDayOfMonth(date: Date) -> Date {
+    private func firstDayOfMonth(date: Date) -> Date {
         let components = calendar.dateComponents([.year, .month], from: date)
         return calendar.date(from: components) ?? Date()
     }
     
-    static func weekDay(date: Date) -> Int {
+    private func weekDayCount(date: Date) -> Int {
         let components = calendar.dateComponents([.weekday], from: date)
-        return components.weekday! - 1
+        return components.weekday ?? 0
     }
 }

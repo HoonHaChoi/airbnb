@@ -13,7 +13,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarCollection: UICollectionView!
     @IBOutlet weak var containerView: UIView!
     
-    private var calendarManager = CalendarManager()
+    private var calendarHelper = CalendarHelper()
     private var calendarDataSource: CalendarDataSource?
     private let headerViewHight:CGFloat = 60
     private let splitCount:CGFloat = 7
@@ -59,7 +59,9 @@ class CalendarViewController: UIViewController {
     }
     
     private func createDataSoure() {
-        calendarDataSource = CalendarDataSource(dates: calendarManager.dates, sequenceDates: searchManager?.selectDates)
+        calendarDataSource = CalendarDataSource(months: calendarHelper.month,
+                                                days: calendarHelper.days,
+                                                sequenceDates: searchManager?.selectDates)
     }
     
     private func bind() {
@@ -102,8 +104,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let month = CalendarHelper.month(index: indexPath.section)
-        let day = calendarManager.dates[month]?[indexPath.row] ?? Date()
+        let day = calendarHelper.days[indexPath.section][indexPath.row] ?? .init()
         if blockOldDaySelect(with: day) { return }
         searchManager?.selectDay(from: day)
         didSelectSubject.send()
