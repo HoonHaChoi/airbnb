@@ -19,7 +19,6 @@ class CalendarHelper {
         oneYearRange.forEach { (value) in
             let monthDate = calendar.date(byAdding: .month, value: value, to: Date()) ?? Date()
             let convertMonthString = dateFormatter.convertCalenderHeaderString(date: monthDate)
-            
             month.append(convertMonthString)
             days.append(makeDays(date: monthDate))
         }
@@ -46,11 +45,6 @@ class CalendarHelper {
         return day < spaceInt
     }
     
-    func month(index: Int) -> String {
-        let month = calendar.date(byAdding: .month, value: index, to: Date()) ?? Date()
-        return dateFormatter.convertCalenderHeaderString(date: month)
-    }
-    
     private func daysInMonth(date: Date) -> Int {
         let range = calendar.range(of: .day, in: .month, for: date)!
         return range.count
@@ -63,6 +57,6 @@ class CalendarHelper {
     
     private func weekDayCount(date: Date) -> Int {
         let components = calendar.dateComponents([.weekday], from: date)
-        return components.weekday ?? 0
+        return (components.weekday ?? 1) - 1
     }
 }
